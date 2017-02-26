@@ -75,20 +75,20 @@ A person is checking out with less amount of coins than he had at the beginning,
 
 If the person will not press a quit button, the game will be played as follows. The player starts for example with five coins. If he lose all the coins, the checkout/payment windows will appear with according information.
 
-** Highest score **
+**Highest score**
 
 The highest score will be shown. The score is saved in the file. There will be a reset button to reset the score. Each time the program starts the file will be checked if the file is corrupted. If so, the program will rewrite the file with its default.
 
-** Rules **
+**Rules**
 
 The rules and short explanations will be shown.
 
-** Settings **
+**Settings**
 
 There will be two things, which can be changed. First one, a number of coins you have at the beginning. Only numeric entries will be accepted. Second, the difficulty. There will be three levels of difficulty: 'Real Life', 'Normal' and 'Fun'. Each difficulty will have its own different reel. This means, the probability to get two or three similar fruits or jokers will be different. Besides, there will be 3 different presets for win situations - e.g. how many coins well be granted in the case of 3 jokers - 30 or 300 coins. 
 The settings will be saved in the file. The file will be checked every time the program starts. If the file is corrupted, it will be rewritten with default settings. It is possible to change settings manually in the file and they should load normally if the format is the same. 
 
-** Exit game **
+**Exit game**
 
 No specific message will be shown. All settings and high scores are saved automatically.
 
@@ -96,9 +96,9 @@ Schedule
 --------
 
 - 5. week: UI mockup
-- 6. week: core implementation of the game, generation of reels
-- 7. week: score calculation
-- 8. week: live/trials realization
+- 6. week: core implementation of the game
+- 7. week: generation of reels 
+- 8. week: score calculation
 - 9. week: JavaFX UI realization
 - 10. week: game UI + settings
 - 11. week: high score
