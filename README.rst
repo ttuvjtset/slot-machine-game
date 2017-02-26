@@ -1,35 +1,62 @@
+Slot Machine
+============
+
 Description
-===========
-In this project, I would like to implement one very popular casino game named **Slot Machine**. 
-The aim of the game is to check out with the largest amount of coins (equivalent to money).
-The slot machine has three reels.
-On each reel, there is a banana, lemon, orange, apple, melon and a joker.
-The payouts are as follows: 
+-----------
+
+
+In this project, I would like to implement one very popular casino game named **Slot Machine**. The aim of the game is to check out with the largest amount of coins (equivalent to money).
+
+The slot machine has three reels. On each reel, there is a **banana, lemon, orange, apple, melon and a joker**.
+
+The payouts are as follows ('Real Life' difficulty setting): 
+
 - Three jokers (Joker|Joker|Joker) wins 30 coins.
+
 - Any three similar fruits (example: Lemon|Lemon|Lemon) wins 10 coins.
+
 - Any two jokers win 4 coins.
+
 - Any one joker wins 1 coin.
-You have three trials or lives. 
-There will be a button to check out at any point of the game. After this button will be pressed, the checkout window will appear. Your total score will reduce proportionately, as more trials you need. The highest score will be saved in the file. The highest score can be reset. 
+
+There will be a button to check out at any point of the game. After this button will be pressed, the checkout window will appear. The highest score will be saved in the file. The highest score can be reset. 
+
 There will be three difficulty levels. A number of coins can be set manually. Both settings will be saved in the file. 
+
 The program will check each time if the files (highest score and settings) are corrupted (was manipulated by the user) and rewrite the file if needed.  
+
 
 Functions
 ---------
-As the program starts, the settings and highest score files will be loaded. If it contains corrupted data or the data in it was manipulated, it will be rewritten with default settings. The score file will be reset to zero. Files will be checked separately. 
-Each time the different random reel combination will be generated according to a level of difficulty set in the settings.
-The amount of the coins lost or won will be shown each time after a play. A number of coins added to a total sum or deducted from it will depend also on the difficulty set in the settings. The total amount left will be updated after each play.
-At the beginning, there are 3 trials or lives available. They will be shown as the stars at the top of the slot machine. 
-According to trials/lives played, the score will be calculated proportionately. The more trials/lives are played, the smaller is the score. There will be a specific formula for this calculation. 
-There will be a button to check out at any point of the game. After this button will be pressed, the checkout/payment window will appear.
-The checkout/payment window will also appear if you are in your last life and you lost all your coins. 
-At least three different checkout windows will be implemented according to a situation (won / lost / equal amount of coins).
-In the settings, three difficulties can be set manually. 
-Each difficulty will represent varying probability to win. 
-Besidens that a number of coins to win is also different. E.g. in the 'Real Life' difficulty 30 coins will be win in case of 3 jokers. In the 'Fun' difficulty you would win 300 coins.
-In the settings, a number of coins can be set manually. Only digits will be accepted.
-In the highest score menu, the highest score will be shown.
-The highest score can be manually reset to zero.
+
+- As the program starts, the settings and highest score files will be loaded. If it contains corrupted data or the data in it was manipulated, it will be rewritten with default settings. The score file will be reset to zero. Files will be checked separately. 
+
+- Each time the different random reel combination will be generated according to a level of difficulty set in the settings.
+
+- The amount of the coins lost or won will be shown each time after a play. A number of coins added to a total sum or deducted from it will depend also on the difficulty set in the settings. The total amount left will be updated after each play.
+
+- At the beginning, there are 3 trials or lives available. They will be shown as the stars at the top of the slot machine. 
+
+- According to trials/lives played, the score will be calculated proportionately. The more trials/lives are played, the smaller is the score. There will be a specific formula for this calculation. 
+
+- There will be a button to check out at any point of the game. After this button will be pressed, the checkout/payment window will appear.
+
+- The checkout/payment window will also appear if you are in your last life and you lost all your coins. 
+
+- At least three different checkout windows will be implemented according to a situation (won / lost / equal amount of coins).
+
+- In the settings, three difficulties can be set manually. 
+
+- Each difficulty will represent varying probability to win. 
+
+- Besidens that a number of coins to win is also different. E.g. in the 'Real Life' difficulty 30 coins will be win in case of 3 jokers. In the 'Fun' difficulty you would win 300 coins.
+
+- In the settings, a number of coins can be set manually. Only digits will be accepted.
+
+- In the highest score menu, the highest score will be shown.
+
+- The highest score can be manually reset to zero.
+
 
 
 Windows
