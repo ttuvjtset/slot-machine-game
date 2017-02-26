@@ -37,7 +37,7 @@ Functions
 
 - There will be a button to check out at any point of the game. After this button will be pressed, the checkout/payment window will appear.
 
-- The checkout/payment window will also appear if you are in your last life and you lost all your coins. 
+- The checkout/payment window will also appear if you lost all your coins. 
 
 - At least three different checkout windows will be implemented according to a situation (won / lost / equal amount of coins).
 
@@ -98,7 +98,7 @@ Schedule
 - 5. week: UI mockup
 - 6. week: core implementation of the game
 - 7. week: generation of reels 
-- 8. week: score calculation
+- 8. week: score calculation, read/write file implementation
 - 9. week: JavaFX UI realization
 - 10. week: game UI + settings
 - 11. week: high score
