@@ -1,5 +1,5 @@
-Slot Machine
-============
+ITI0011 GUI - Slot Machine
+==========================
 
 Description
 -----------
