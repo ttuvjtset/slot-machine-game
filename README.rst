@@ -35,10 +35,6 @@ Functions
 
 - The amount of the coins lost or won will be shown each time after a play. A number of coins added to a total sum or deducted from it will depend also on the difficulty set in the settings. The total amount left will be updated after each play.
 
-- At the beginning, there are 3 trials or lives available. They will be shown as the stars at the top of the slot machine. 
-
-- According to trials/lives played, the score will be calculated proportionately. The more trials/lives are played, the smaller is the score. There will be a specific formula for this calculation. 
-
 - There will be a button to check out at any point of the game. After this button will be pressed, the checkout/payment window will appear.
 
 - The checkout/payment window will also appear if you are in your last life and you lost all your coins. 
@@ -64,6 +60,7 @@ Windows
 At the beginning of the game, there will be a menu with five options to choose from: 'New Game', 'Highest Score', 'Rules', 'Settings' and 'Exit game'.
 
 **New Game**
+
 When the new game is started, the windows will appear with the slot machine. At the top right corner, there will be stars, which will represent a number of lives/trials left. Initially, there will be three stars. At the right bottom corner, there will be the total number of coins left. At the beginning, it will be the amount that was set manually in the settings, e.g. 5 coins. After the game will be initiated, the combination of reels will be shown. Depending on the combination at the bottom left corner the information will be shown how many coins you won or lost. At any point of the game, there is the possibility to checkout with a number of coins you possess. The detailed checkout/payment window will be shown in this case. There will be three situations in case of the manual quitting: 
 
 Situation 1. A person is checking out with more coins than he had at the beginning, this means he won. In this case in the payment/checkout window will be shown, how many coins the person actually won. The message will appear “Congratulations! You have earned xxx coins“.
