@@ -95,13 +95,12 @@ No specific message will be shown. All settings and high scores are saved automa
 Schedule
 --------
 
-- 5. week: UI mockup
-- 6. week: core implementation of the game
-- 7. week: generation of reels 
-- 8. week: score calculation, read/write file implementation
-- 9. week: JavaFX UI realization
-- 10. week: game UI + settings
-- 11. week: high score
+- 6. week: UI mockup 
+- 7. week: core implementation of the game
+- 8. week: generation of reels 
+- 9. week: score calculation, read/write file implementation
+- 10. week: JavaFX UI realization
+- 11. week: high score / settings
 - 12. week: bonus/bugfix
 
 Points
