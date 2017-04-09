@@ -7,9 +7,16 @@ import java.util.Collections;
 public class Calculation {
     public ArrayList<String> sequence;
 
+
+
     int startAmount = 5;
 
     int currentAmount = 0;
+
+    public void setStartAmount(int startAmount) {
+        this.startAmount = startAmount;
+        currentAmount = startAmount;
+    }
 
     public Calculation() {
         currentAmount = startAmount;

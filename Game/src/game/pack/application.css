@@ -1,3 +1,9 @@
-.anchor {
-    -fx-background-image:url('/Game/src/images_tmp/test_image.png');
+
+#AnchorPane{
+    -fx-background-image: url("file:Game/src/ui_images/background.png");
+    -fx-background-repeat: stretch;
+    -fx-effect: dropshadow(three-pass-box, white, 30, 0.5, 0, 0);
+    -fx-background-position: center center;
 }
+
+

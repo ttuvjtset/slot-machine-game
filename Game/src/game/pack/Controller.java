@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -39,6 +40,12 @@ public class Controller implements Initializable {
     private ImageView image3;
 
     @FXML
+    private TextField coinsInput;
+
+    @FXML
+    private Button setCoinsBtn;
+
+    @FXML
     private Button newGame;
 
     @FXML
@@ -53,6 +60,8 @@ public class Controller implements Initializable {
 
     private Calculation calculation;
 
+    private HighScore highScore;
+
     private boolean gameOver = false;
 
     @Override
@@ -60,6 +69,7 @@ public class Controller implements Initializable {
         imageLoad = new LoadGenerateImages("Game/src/images/");
         //game = new Game();
         calculation = new Calculation();
+        highScore = new HighScore();
         quitBtn.setVisible(false);
         newGame.setVisible(false);
     }
@@ -102,7 +112,8 @@ public class Controller implements Initializable {
         generateBtn.setVisible(false);
         quitBtn.setVisible(false);
         gameOver = true;
-        highScoreLabel.setText("High score saved: " + calculation.getCurrentAmount());
+        highScore.save(calculation.getCurrentAmount());
+        highScoreLabel.setText("High score:" + highScore.getHighScore());
     }
 
 
@@ -117,5 +128,10 @@ public class Controller implements Initializable {
         outputLabel1.setText("");
         outputLabel2.setText(calculation.getCurrentAmount());
 
+    }
+
+    @FXML
+    void setCoins(ActionEvent event) {
+        calculation.setStartAmount(20);
     }
 }
