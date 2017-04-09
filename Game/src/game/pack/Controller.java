@@ -10,7 +10,6 @@ import javafx.scene.image.ImageView;
 
 import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -39,11 +38,12 @@ public class Controller implements Initializable {
     @FXML
     private ImageView image3;
 
-    private ArrayList<String> imageFiles;
+    private LoadGenerateImages imageLoad;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadImages("Game/src/images/");
+        imageLoad = new LoadGenerateImages("Game/src/images/");
+        //imageLoad.loadImages();
     }
 
     @FXML
@@ -54,29 +54,12 @@ public class Controller implements Initializable {
         outputLabel2.setText(game.generate());
         outputLabel3.setText(game.generate());
 
-        image1.setImage(new Image(new File(randomImageFilename()).toURI().toString()));
-        image2.setImage(new Image(new File(randomImageFilename()).toURI().toString()));
-        image3.setImage(new Image(new File(randomImageFilename()).toURI().toString()));
+        image1.setImage(new Image(new File(imageLoad.randomImageFilename()).toURI().toString()));
+        image2.setImage(new Image(new File(imageLoad.randomImageFilename()).toURI().toString()));
+        image3.setImage(new Image(new File(imageLoad.randomImageFilename()).toURI().toString()));
 
     }
 
-    private void loadImages(String directoryPath) {
-        imageFiles = new ArrayList<>();
 
-        File directory = new File(directoryPath);
-
-        File[] files = directory.listFiles();
-        for (File f : files) {
-            imageFiles.add(f.getPath());
-        }
-        System.out.println("Images loaded: " + imageFiles);
-    }
-
-    private String randomImageFilename() {
-        int imageRandomNumber = (int) (Math.random() * imageFiles.size());
-        String imageRandomFilename = imageFiles.get(imageRandomNumber);
-        System.out.println(imageRandomFilename); // random
-        return imageRandomFilename;
-    }
 
 }
