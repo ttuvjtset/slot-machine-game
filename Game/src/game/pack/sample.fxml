@@ -2,13 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="game.pack.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.pack.Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -24,6 +24,7 @@
             <Label fx:id="outputLabel2" layoutX="346.0" layoutY="219.0" text="Label" />
             <Label fx:id="outputLabel3" layoutX="585.0" layoutY="219.0" text="Label" />
             <Button fx:id="generateBtn" layoutX="588.0" layoutY="435.0" mnemonicParsing="false" onAction="#showReels" text="Generate" />
+            <ImageView fx:id="imageView1" fitHeight="162.0" fitWidth="224.0" layoutX="67.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>
