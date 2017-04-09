@@ -20,11 +20,14 @@
    <children>
       <AnchorPane prefHeight="638.0" prefWidth="921.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <Label fx:id="outputLabel1" layoutX="132.0" layoutY="219.0" text="Label" />
-            <Label fx:id="outputLabel2" layoutX="346.0" layoutY="219.0" text="Label" />
-            <Label fx:id="outputLabel3" layoutX="585.0" layoutY="219.0" text="Label" />
-            <Button fx:id="generateBtn" layoutX="588.0" layoutY="435.0" mnemonicParsing="false" onAction="#showReels" text="Generate" />
-            <ImageView fx:id="imageView1" fitHeight="162.0" fitWidth="224.0" layoutX="67.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="outputLabel1" layoutX="144.0" layoutY="431.0" text="Label" />
+            <Label fx:id="outputLabel2" layoutX="443.0" layoutY="431.0" text="Label" />
+            <Label fx:id="outputLabel3" layoutX="707.0" layoutY="431.0" text="Label" />
+            <Button fx:id="generateBtn" layoutX="702.0" layoutY="488.0" mnemonicParsing="false" onAction="#showReels" text="Generate" />
+            <ImageView fx:id="imageView1" fitHeight="162.0" fitWidth="224.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="image1" fitHeight="256.0" fitWidth="256.0" layoutX="33.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="image2" fitHeight="256.0" fitWidth="256.0" layoutX="320.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="image3" fitHeight="256.0" fitWidth="256.0" layoutX="596.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>
