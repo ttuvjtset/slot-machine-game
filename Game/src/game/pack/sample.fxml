@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.pack.Controller">
    <columnConstraints>
@@ -20,9 +21,12 @@
    <children>
       <AnchorPane prefHeight="638.0" prefWidth="921.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <Label fx:id="outputLabel1" layoutX="144.0" layoutY="431.0" text="Label" />
-            <Label fx:id="outputLabel2" layoutX="443.0" layoutY="431.0" text="Label" />
-            <Label fx:id="outputLabel3" layoutX="707.0" layoutY="431.0" text="Label" />
+            <Label fx:id="outputLabel2" layoutX="443.0" layoutY="431.0" />
+            <Label fx:id="outputLabel3" layoutX="707.0" layoutY="431.0" />
+            <Label fx:id="outputLabel1" layoutX="144.0" layoutY="431.0" text="Label">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Label>
             <Button fx:id="generateBtn" layoutX="702.0" layoutY="488.0" mnemonicParsing="false" onAction="#showReels" text="Generate" />
             <ImageView fx:id="imageView1" fitHeight="162.0" fitWidth="224.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="image1" fitHeight="256.0" fitWidth="256.0" layoutX="33.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />

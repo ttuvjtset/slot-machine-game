@@ -40,26 +40,31 @@ public class Controller implements Initializable {
 
     private LoadGenerateImages imageLoad;
 
+    private Game game;
+
+    private Calculation calculation;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         imageLoad = new LoadGenerateImages("Game/src/images/");
-        //imageLoad.loadImages();
+        game = new Game();
+        calculation = new Calculation();
     }
 
     @FXML
     void showReels(ActionEvent event) {
-        Game game = new Game();
 
-        outputLabel1.setText(game.generate());
-        outputLabel2.setText(game.generate());
-        outputLabel3.setText(game.generate());
+        String path1 = imageLoad.randomImageFilename();
+        String path2 = imageLoad.randomImageFilename();
+        String path3 = imageLoad.randomImageFilename();
 
-        image1.setImage(new Image(new File(imageLoad.randomImageFilename()).toURI().toString()));
-        image2.setImage(new Image(new File(imageLoad.randomImageFilename()).toURI().toString()));
-        image3.setImage(new Image(new File(imageLoad.randomImageFilename()).toURI().toString()));
+        image1.setImage(new Image(new File(path1).toURI().toString()));
+        image2.setImage(new Image(new File(path2).toURI().toString()));
+        image3.setImage(new Image(new File(path3).toURI().toString()));
+
+        calculation.parse(path1, path2, path3);
+        outputLabel1.setText(calculation.evaluate());
+        outputLabel2.setText(calculation.getCurrentAmount());
 
     }
-
-
-
 }
