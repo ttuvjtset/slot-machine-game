@@ -21,9 +21,12 @@
    <children>
       <AnchorPane prefHeight="638.0" prefWidth="921.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <Label fx:id="outputLabel2" layoutX="443.0" layoutY="431.0" />
+            <Label fx:id="outputLabel2" layoutX="423.0" layoutY="431.0" prefHeight="21.0" prefWidth="50.0" textFill="#47d0eb">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font></Label>
             <Label fx:id="outputLabel3" layoutX="707.0" layoutY="431.0" />
-            <Label fx:id="outputLabel1" layoutX="144.0" layoutY="431.0" text="Label">
+            <Label fx:id="outputLabel1" layoutX="71.0" layoutY="437.0" text="To start press Generate">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Label>
@@ -32,6 +35,9 @@
             <ImageView fx:id="image1" fitHeight="256.0" fitWidth="256.0" layoutX="33.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="image2" fitHeight="256.0" fitWidth="256.0" layoutX="320.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="image3" fitHeight="256.0" fitWidth="256.0" layoutX="596.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="newGame" layoutX="194.0" layoutY="488.0" mnemonicParsing="false" onAction="#newGame" text="Start new game" />
+            <Button fx:id="quitBtn" layoutX="461.0" layoutY="488.0" mnemonicParsing="false" onAction="#quitAndSave" text="Quit" />
+            <Label fx:id="highScoreLabel" layoutX="468.0" layoutY="547.0" />
          </children>
       </AnchorPane>
    </children>

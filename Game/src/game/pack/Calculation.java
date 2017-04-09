@@ -7,12 +7,11 @@ import java.util.Collections;
 public class Calculation {
     public ArrayList<String> sequence;
 
-    int startAmount = 10;
+    int startAmount = 5;
 
     int currentAmount = 0;
 
     public Calculation() {
-
         currentAmount = startAmount;
     }
 
@@ -36,6 +35,9 @@ public class Calculation {
     }
 
     public String evaluate() {
+        if (currentAmount <= 0) {
+            return "Game over!";
+        }
         System.out.println("bilo " + currentAmount);
         currentAmount -= 1;
         System.out.println("minus monetka" + currentAmount);
@@ -62,9 +64,13 @@ public class Calculation {
             System.out.println("final" + currentAmount + " \n");
             return "Joker x1";
         } else {
-            System.out.println("LOST 0");
-            System.out.println("final" + currentAmount + " \n");
-            return "Lost!";
+            if (currentAmount == 0) {
+                return "Game over!";
+            } else {
+                System.out.println("LOST 0");
+                System.out.println("final" + currentAmount + " \n");
+                return "Lost!";
+            }
         }
 
     }
