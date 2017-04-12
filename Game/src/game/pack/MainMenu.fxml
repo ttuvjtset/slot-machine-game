@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.pack.MainMenuController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="850.0" prefWidth="1200.0">
+         <children>
+            <Button fx:id="NewGameBtn" layoutX="168.0" layoutY="180.0" mnemonicParsing="false" onAction="#GoToNewGame" stylesheets="@application.css" text="New Game" />
+            <Button fx:id="HighestScoreBtn" layoutX="168.0" layoutY="237.0" mnemonicParsing="false" onAction="#GoToHighestScore" stylesheets="@application.css" text="Highest Score" />
+            <Button fx:id="RulesBtn" layoutX="168.0" layoutY="296.0" mnemonicParsing="false" onAction="#GoToRules" stylesheets="@application.css" text="Rules" />
+            <Button fx:id="SettingsBtn" layoutX="168.0" layoutY="357.0" mnemonicParsing="false" onAction="#GoToSettings" stylesheets="@application.css" text="Settings" />
+            <Button fx:id="ExitBtn" layoutX="168.0" layoutY="418.0" mnemonicParsing="false" onAction="#Exit" stylesheets="@application.css" text="Exit" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>

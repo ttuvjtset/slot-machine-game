@@ -9,11 +9,13 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("GameUI.fxml"));
         primaryStage.setTitle("Slot Machine");
-        primaryStage.setScene(new Scene(root, 1200, 850));
+        primaryStage.setScene(new Scene(root, 1200, 900));
         primaryStage.getIcons().add(new Image("file:Game/src/ui_images/icon.png"));
         primaryStage.show();
     }

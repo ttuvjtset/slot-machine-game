@@ -27,17 +27,17 @@ public class Calculation {
 
         String[] splitPath1 = filepath1.split("\\\\")[3].split("\\.");
         String element1 = splitPath1[0];
-        System.out.println(element1);
+        System.out.println("1" + element1);
         sequence.add(element1);
 
         String[] splitPath2 = filepath2.split("\\\\")[3].split("\\.");
         String element2 = splitPath2[0];
-        System.out.println(element2);
+        System.out.println("2" + element2);
         sequence.add(element2);
 
         String[] splitPath3 = filepath3.split("\\\\")[3].split("\\.");
         String element3 = splitPath3[0];
-        System.out.println(element3);
+        System.out.println("3" + element3);
         sequence.add(element3);
     }
 

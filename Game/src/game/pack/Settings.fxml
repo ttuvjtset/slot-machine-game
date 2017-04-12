@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.pack.SettingsController">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <AnchorPane prefHeight="850.0" prefWidth="1200.0">
+            <children>
+                <Button fx:id="GoToMenuBtn" layoutX="168.0" layoutY="418.0" mnemonicParsing="false" onAction="#GoToMenu" text="Back to menu" />
+                <Label layoutX="206.0" layoutY="174.0" text="Settings" />
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>

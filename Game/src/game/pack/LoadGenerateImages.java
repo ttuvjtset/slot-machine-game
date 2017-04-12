@@ -22,7 +22,7 @@ public class LoadGenerateImages {
     public String randomImageFilename() {
         int imageRandomNumber = (int) (Math.random() * imageFiles.size());
         String imageRandomFilename = imageFiles.get(imageRandomNumber);
-        System.out.println(imageRandomFilename); // random
+        System.out.println("tyt" + imageRandomFilename); // random
         return imageRandomFilename;
     }
 
