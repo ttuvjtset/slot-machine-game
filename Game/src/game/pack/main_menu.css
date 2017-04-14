@@ -1,0 +1,15 @@
+.buttonMainMenu {
+    -fx-background-color: rgba(173,214,92, 100);
+    //-fx-border-color: white;
+    -fx-font-size: 20pt;
+    -fx-background-radius: 5em;
+    -fx-font-weight: bold;
+}
+.buttonMainMenu:hover {
+-fx-font-size: 22pt;
+//-fx-underline: true;
+}
+
+.buttonMainMenu:pressed{
+-fx-font-size: 20pt;
+}

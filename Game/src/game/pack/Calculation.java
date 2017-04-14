@@ -62,37 +62,39 @@ public class Calculation {
             currentAmount += winAmount;
             System.out.println("Three Jokers +" + winAmount);
             System.out.println("Final = " + currentAmount + " \n");
-            return "Three Jokers!!!";
+            return "WIN!!! Three Jokers!!!";
 
         } else if (Collections.frequency(sequence, "Banana") == 3 || Collections.frequency(sequence, "Lemon") == 3 || Collections.frequency(sequence, "Orange") == 3 || Collections.frequency(sequence, "Apple") == 3 || Collections.frequency(sequence, "Melon") == 3 || Collections.frequency(sequence, "Grape") == 3 || Collections.frequency(sequence, "Cherry") == 3) {
             winAmount = 10 * playAmount;
             currentAmount += winAmount;
             System.out.println("Three Similar Fruits +" + winAmount);
             System.out.println("Final = " + currentAmount + " \n");
-            return "Three Similar Fruits!!!";
+            return "WIN!!! Three Fruits!!!";
 
         } else if (Collections.frequency(sequence, "Joker") == 2) {
             winAmount = 4 * playAmount;
             currentAmount += winAmount;
             System.out.println("Two Jokers +" + winAmount);
             System.out.println("Final = " + currentAmount + " \n");
-            return "Two Jokers!!";
+            return "WIN!! Two Jokers!!";
 
         } else if (Collections.frequency(sequence, "Joker") == 1) {
             winAmount = playAmount;
             currentAmount += winAmount;
             System.out.println("Joker +" + winAmount);
             System.out.println("Final = " + currentAmount + " \n");
-            return "One Joker!";
+            return "WIN! One Joker!";
         } else {
             if (currentAmount == 0) {
                 winAmount = 0;
-                return "Game over!";
+                return "No coins left!";
             } else {
                 winAmount = 0;
                 System.out.println("LOST 0");
                 System.out.println("Final = " + currentAmount + " \n");
-                return "";
+                String[] anwsers = {"This time no luck!", "Try again!", "You'll win next time!", "Don't give up!", "You were so close!"};
+                String randomString = anwsers[(int)(Math.random() * anwsers.length)];
+                return randomString;
             }
         }
 

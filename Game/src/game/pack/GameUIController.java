@@ -175,6 +175,10 @@ public class GameUIController implements Initializable {
         newGame.setVisible(false);
         skipBtn.setVisible(false);
 
+        highScoreLabel.setVisible(false);
+        highScoreLabel1.setVisible(false);
+        saveNameLabel.setVisible(false);
+
         catalogueNormal = new ArrayList<>();
         catalogueNormal.add("Game\\src\\images\\Apple.png");
         catalogueNormal.add("Game\\src\\images\\Banana.png");
@@ -228,6 +232,10 @@ public class GameUIController implements Initializable {
         if (!gameOver && calculation.playPossible() && (playOneBtn.isSelected() || playThreeBtn.isSelected() || playAllBtn.isSelected())) {
 
             if (playAllBtn.isSelected()) calculation.setPlayAmount(Integer.valueOf(calculation.getCurrentAmount()));
+
+            highScoreLabel.setVisible(false);
+            highScoreLabel1.setVisible(false);
+            saveNameLabel.setVisible(false);
 
             generateBtn.setVisible(false);
             skipBtn.setDisable(false);
@@ -298,7 +306,8 @@ public class GameUIController implements Initializable {
                             playThreeBtn.setDisable(false);
                         }
 
-                        if (result.equals("Game over!")) {
+                        if (result.equals("No coins left!")) {
+                            System.out.println("debugg, game over!");
                             gameOver = true;
                             newGame.setVisible(true);
                             generateBtn.setVisible(false);
@@ -343,19 +352,23 @@ public class GameUIController implements Initializable {
     void quitAndSave(ActionEvent event) {
         //outputLabelTextStatic.setText("To start press Start New Game");
 
+        highScoreLabel.setVisible(true);
+
 
         String highscoreSaveProcessAnwser = highScore.save(calculation.getCurrentAmount());
         highScoreLabel.setText(highscoreSaveProcessAnwser);
         if (!highscoreSaveProcessAnwser.contains("Not greater than previously achieved ")) {
+            highScoreLabel1.setVisible(true);
+            saveNameLabel.setVisible(true);
+
             outputLabelCoinsStatic.setText("");
             newGame.setVisible(true);
             generateBtn.setVisible(false);
             quitBtn.setVisible(false);
             gameOver = true;
         } else {
-            highScoreLabel1.setVisible(true);
-            saveNameLabel.setVisible(true);
 
+            // + button
         }
         //highScoreLabel.setText("High score:" + highScore.getHighScore());
     }
