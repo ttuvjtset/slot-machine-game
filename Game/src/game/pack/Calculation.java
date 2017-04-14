@@ -7,18 +7,26 @@ import java.util.Collections;
 public class Calculation {
     public ArrayList<String> sequence;
 
-
-
-    int startAmount = 5;
-
+    int startAmount;
     int currentAmount = 0;
+    int playAmount = 1;
+    int winAmount = 0;
 
-    public void setStartAmount(int startAmount) {
-        this.startAmount = startAmount;
-        currentAmount = startAmount;
+    public int getWinAmount() {
+        return winAmount;
     }
 
-    public Calculation() {
+    public boolean playPossible() {
+        return currentAmount >= playAmount;
+    }
+
+//    public void setStartAmount(int startAmount) {
+//        this.startAmount = startAmount;
+//        currentAmount = startAmount;
+//    }
+
+    public Calculation(int startAmount) {
+        this.startAmount = startAmount;
         currentAmount = startAmount;
     }
 
@@ -45,41 +53,58 @@ public class Calculation {
         if (currentAmount <= 0) {
             return "Game over!";
         }
-        System.out.println("bilo " + currentAmount);
-        currentAmount -= 1;
-        System.out.println("minus monetka" + currentAmount);
+        System.out.println("You had " + currentAmount);
+        currentAmount -= playAmount;
+        System.out.println("- " + playAmount + " = " + currentAmount);
 
         if (Collections.frequency(sequence, "Joker") == 3) {
-            System.out.println("Joker x3 +30");
-            currentAmount += 30;
-            System.out.println("final" + currentAmount + " \n");
-            return "Joker x3";
+            winAmount = 30 * playAmount;
+            currentAmount += winAmount;
+            System.out.println("Three Jokers +" + winAmount);
+            System.out.println("Final = " + currentAmount + " \n");
+            return "Three Jokers!!!";
 
-        } else if (Collections.frequency(sequence, "Banana") == 3 || Collections.frequency(sequence, "Lemon") == 3 || Collections.frequency(sequence, "Orange") == 3 || Collections.frequency(sequence, "Apple") == 3 || Collections.frequency(sequence, "Melon") == 3) {
-            System.out.println("Ne Joker x3 +10");
-            currentAmount += 10;
-            System.out.println("final" + currentAmount + " \n");
-            return "Ne Joker x3";
+        } else if (Collections.frequency(sequence, "Banana") == 3 || Collections.frequency(sequence, "Lemon") == 3 || Collections.frequency(sequence, "Orange") == 3 || Collections.frequency(sequence, "Apple") == 3 || Collections.frequency(sequence, "Melon") == 3 || Collections.frequency(sequence, "Grape") == 3 || Collections.frequency(sequence, "Cherry") == 3) {
+            winAmount = 10 * playAmount;
+            currentAmount += winAmount;
+            System.out.println("Three Similar Fruits +" + winAmount);
+            System.out.println("Final = " + currentAmount + " \n");
+            return "Three Similar Fruits!!!";
+
         } else if (Collections.frequency(sequence, "Joker") == 2) {
-            System.out.println("Joker x2 +4");
-            currentAmount += 4;
-            System.out.println("final" + currentAmount + " \n");
-            return "Joker x2";
+            winAmount = 4 * playAmount;
+            currentAmount += winAmount;
+            System.out.println("Two Jokers +" + winAmount);
+            System.out.println("Final = " + currentAmount + " \n");
+            return "Two Jokers!!";
+
         } else if (Collections.frequency(sequence, "Joker") == 1) {
-            System.out.println("Joker x1 +1");
-            currentAmount += 1;
-            System.out.println("final" + currentAmount + " \n");
-            return "Joker x1";
+            winAmount = playAmount;
+            currentAmount += winAmount;
+            System.out.println("Joker +" + winAmount);
+            System.out.println("Final = " + currentAmount + " \n");
+            return "One Joker!";
         } else {
             if (currentAmount == 0) {
+                winAmount = 0;
                 return "Game over!";
             } else {
+                winAmount = 0;
                 System.out.println("LOST 0");
-                System.out.println("final" + currentAmount + " \n");
-                return "Lost!";
+                System.out.println("Final = " + currentAmount + " \n");
+                return "";
             }
         }
 
+    }
+
+    public int getPlayAmount() {
+        return playAmount;
+    }
+
+    public void setPlayAmount(int playAmount) {
+
+        this.playAmount = playAmount;
     }
 
     public String getCurrentAmount() {

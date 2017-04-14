@@ -2,6 +2,9 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -17,8 +20,17 @@
     <children>
         <AnchorPane prefHeight="850.0" prefWidth="1200.0">
             <children>
-                <Button fx:id="GoToMenuBtn" layoutX="168.0" layoutY="418.0" mnemonicParsing="false" onAction="#GoToMenu" text="Back to menu" />
-                <Label layoutX="206.0" layoutY="174.0" text="Settings" />
+                <Button fx:id="GoToMenuBtn" layoutX="42.0" layoutY="580.0" mnemonicParsing="false" onAction="#GoToMenu" text="Back to menu" />
+                <Label layoutX="153.0" layoutY="35.0" text="Settings" />
+            <TextField fx:id="coinsInput" layoutX="87.0" layoutY="164.0" onKeyReleased="#writeOnKeyReleased" promptText="coins" />
+            <ToggleButton fx:id="normalDifficultyBtn" layoutX="87.0" layoutY="250.0" mnemonicParsing="false" onAction="#normalDifficulty" selected="true" text="Normal">
+               <toggleGroup>
+                  <ToggleGroup fx:id="difficultyBtns" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="hardDifficultyBtn" layoutX="160.0" layoutY="250.0" mnemonicParsing="false" onAction="#hardDifficulty" selected="true" text="Hard" toggleGroup="$difficultyBtns" />
+            <Label fx:id="statusLabel" layoutX="403.0" layoutY="255.0" text="Label" />
+            <Button fx:id="resetBtn" layoutX="90.0" layoutY="304.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
             </children>
         </AnchorPane>
     </children>

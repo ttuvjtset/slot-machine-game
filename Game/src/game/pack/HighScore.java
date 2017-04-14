@@ -3,11 +3,23 @@ package game.pack;
 
 public class HighScore {
     private int highScore = 0;
+    LoadSaveScore lss;
 
-    public void save(String score) {
+
+    public HighScore (String filename){
+        lss = new LoadSaveScore(filename);
+        lss.checkAndLoadSettings();
+        highScore = lss.getScoreRead();
+    }
+
+
+    public String save(String score) {
         if (Integer.valueOf(score) > highScore) {
             highScore = Integer.valueOf(score);
-            System.out.println("rewritten!");
+            lss.saveScore(highScore);
+            return "TOP Score of " + highScore + " saved!";
+        } else {
+            return "Not greater than previously achieved " + highScore + "!";
         }
     }
 

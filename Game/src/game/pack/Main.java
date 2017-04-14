@@ -17,6 +17,8 @@ public class Main extends Application {
         primaryStage.setTitle("Slot Machine");
         primaryStage.setScene(new Scene(root, 1200, 900));
         primaryStage.getIcons().add(new Image("file:Game/src/ui_images/icon.png"));
+        primaryStage.setResizable(false);
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     }
 

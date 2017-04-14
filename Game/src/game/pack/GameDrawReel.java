@@ -187,7 +187,7 @@ public class GameDrawReel {
 
 
     public void skipAnimation() {
-        sequentialTranslation.jumpTo(Duration.seconds(6));
+        sequentialTranslation.jumpTo(sequentialTranslation.getTotalDuration().subtract(Duration.millis(1200))); // 1200
     }
 
     public double generateRandomNumber () {
