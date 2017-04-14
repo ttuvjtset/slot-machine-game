@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" prefHeight="900" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.pack.GameUIController">
+<GridPane alignment="center" prefHeight="960" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.pack.GameUIController">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -25,7 +25,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1200.0" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <AnchorPane id="AnchorPane" prefHeight="960.0" prefWidth="1200.0" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="501.0" layoutX="55.0" layoutY="217.0" stroke="BLACK" strokeType="INSIDE" width="1084.0" />
             <ImageView fx:id="imageView9" fitHeight="256.0" fitWidth="256.0" layoutX="849.0" pickOnBounds="true" preserveRatio="true" />
@@ -40,7 +40,7 @@
             <ImageView fx:id="imageView2" fitHeight="256.0" fitWidth="256.0" layoutX="92.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="imageView3" fitHeight="256.0" fitWidth="256.0" layoutX="92.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="imageView4" fitHeight="256.0" fitWidth="256.0" layoutX="92.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="900.0" fitWidth="1200.0" layoutX="45.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <ImageView fitHeight="960.0" fitWidth="1200.0" layoutX="45.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <viewport>
                   <Rectangle2D />
                </viewport>
@@ -57,14 +57,21 @@
                <font>
                   <Font name="LCDDot Regular" size="39.0" />
                </font></Label>
-            <Button fx:id="generateBtn" layoutX="938.0" layoutY="724.0" mnemonicParsing="false" onAction="#showReels" prefHeight="46.0" prefWidth="87.0" text="SPIN" textFill="WHITE" />
+            <Button fx:id="generateBtn" layoutX="949.0" layoutY="777.0" mnemonicParsing="false" onAction="#showReels" prefHeight="85.0" prefWidth="140.0" styleClass="buttonPlay" stylesheets="@application.css" text="SPIN" textFill="WHITE" />
             <ImageView fx:id="image1" fitHeight="256.0" fitWidth="256.0" layoutX="89.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="image2" fitHeight="256.0" fitWidth="256.0" layoutX="466.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="image3" fitHeight="256.0" fitWidth="256.0" layoutX="844.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="newGame" layoutX="93.0" layoutY="728.0" mnemonicParsing="false" onAction="#newGame" text="RESET" textFill="WHITE" />
-            <Button fx:id="quitBtn" layoutX="208.0" layoutY="728.0" mnemonicParsing="false" onAction="#quitAndSave" text="CASHOUT" textFill="WHITE" />
-            <Label fx:id="highScoreLabel" layoutX="208.0" layoutY="783.0" text="dd" textFill="WHITE" />
-            <Button fx:id="goToMenuBtn" layoutX="14.0" layoutY="830.0" mnemonicParsing="false" onAction="#goToMenu" text="Go to Menu" textFill="WHITE" />
+            <Button fx:id="newGame" layoutX="155.0" layoutY="749.0" mnemonicParsing="false" onAction="#newGame" prefHeight="60.0" prefWidth="110.0" styleClass="buttonReset" text="RESET" textFill="WHITE" />
+            <Button fx:id="quitBtn" layoutX="155.0" layoutY="866.0" mnemonicParsing="false" onAction="#quitAndSave" prefHeight="60.0" prefWidth="194.0" styleClass="buttonCashout" text="CASHOUT" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../ui_images/money.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label fx:id="highScoreLabel" layoutX="390.0" layoutY="872.0" text="dd" textFill="WHITE" />
+            <Button fx:id="goToMenuBtn" layoutX="14.0" layoutY="906.0" mnemonicParsing="false" onAction="#goToMenu" styleClass="buttonExit" text="Go to Menu" textFill="WHITE" />
             <Label fx:id="outputLabelTextPreloaded" layoutX="76.0" layoutY="79.0" text="Three Similar Fruits!!!" textFill="#efef5a">
                <font>
                   <Font name="LCDDot Regular" size="39.0" />
@@ -75,8 +82,8 @@
                   <Font name="LCDDot Regular" size="60.0" />
                </font>
             </Label>
-            <Button fx:id="skipBtn" layoutX="938.0" layoutY="724.0" mnemonicParsing="false" onAction="#skipAnimation" prefHeight="46.0" prefWidth="87.0" text="STOP" textFill="WHITE" />
-              <ToggleButton fx:id="playOneBtn" layoutX="421.0" layoutY="729.0" onAction="#PlayOne" selected="true" stylesheets="@application.css" text="BET ONE">
+            <Button fx:id="skipBtn" layoutX="949.0" layoutY="777.0" mnemonicParsing="false" onAction="#skipAnimation" prefHeight="46.0" prefWidth="87.0" styleClass="buttonStop" text="STOP" textFill="WHITE" />
+              <ToggleButton fx:id="playOneBtn" layoutX="360.0" layoutY="751.0" onAction="#PlayOne" prefHeight="61.0" prefWidth="150.0" selected="true" styleClass="buttonBetToggle" stylesheets="@application.css" text="BET ONE">
                <toggleGroup>
                   <ToggleGroup fx:id="PlayAmountBtns" />
                </toggleGroup>
@@ -84,11 +91,11 @@
                   <Font size="20.0" />
                </font>
             </ToggleButton>
-              <ToggleButton fx:id="playThreeBtn" layoutX="528.0" layoutY="729.0" onAction="#PlayThree" text="BET THREE" toggleGroup="$PlayAmountBtns">
+              <ToggleButton fx:id="playThreeBtn" layoutX="514.0" layoutY="751.0" onAction="#PlayThree" prefHeight="61.0" prefWidth="170.0" styleClass="buttonBetToggle" text="BET THREE" toggleGroup="$PlayAmountBtns">
                <font>
                   <Font size="20.0" />
                </font></ToggleButton>
-              <ToggleButton fx:id="playAllBtn" layoutX="652.0" layoutY="729.0" onAction="#playAll" text="BET MAX" toggleGroup="$PlayAmountBtns">
+              <ToggleButton fx:id="playAllBtn" layoutX="688.0" layoutY="751.0" onAction="#playAll" prefHeight="61.0" prefWidth="150.0" styleClass="buttonBetToggle" text="BET MAX" toggleGroup="$PlayAmountBtns">
                <font>
                   <Font size="20.0" />
                </font></ToggleButton>
@@ -97,8 +104,8 @@
                   <Font name="LCDDot Regular" size="60.0" />
                </font>
             </Label>
-            <Label fx:id="highScoreLabel1" layoutX="208.0" layoutY="811.0" text="You can enter your name:" textFill="WHITE" />
-            <TextField fx:id="saveNameLabel" layoutX="381.0" layoutY="808.0" />
+            <Label fx:id="highScoreLabel1" layoutX="389.0" layoutY="899.0" text="You can enter your name:" textFill="WHITE" />
+            <TextField fx:id="saveNameLabel" layoutX="567.0" layoutY="894.0" />
          </children>
       </AnchorPane>
    </children>

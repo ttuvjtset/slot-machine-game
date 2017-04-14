@@ -1,1 +1,1 @@
-100;hard
+5;normal

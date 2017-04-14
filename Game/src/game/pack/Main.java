@@ -15,7 +15,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("GameUI.fxml"));
         primaryStage.setTitle("Slot Machine");
-        primaryStage.setScene(new Scene(root, 1200, 900));
+        primaryStage.setScene(new Scene(root, 1200, 960));
         primaryStage.getIcons().add(new Image("file:Game/src/ui_images/icon.png"));
         primaryStage.setResizable(false);
         //primaryStage.initStyle(StageStyle.UNDECORATED);
