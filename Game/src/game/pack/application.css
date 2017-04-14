@@ -214,3 +214,7 @@
 .buttonExit:hover {
 -fx-underline: true;
 }
+
+.fontLCDDot {
+    -fx-font-family: "LCDDot";
+}

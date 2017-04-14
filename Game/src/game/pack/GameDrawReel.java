@@ -185,9 +185,19 @@ public class GameDrawReel {
         return new Image(new File(it).toURI().toString());
     }
 
+    public boolean skippibleAnimation() {
+        Duration currentTime = sequentialTranslation.getCurrentTime();
+        Duration minimumAmountOfAnimation = Duration.millis(1700);
+        return currentTime.compareTo(minimumAmountOfAnimation)>0;
+
+   }
 
     public void skipAnimation() {
-        sequentialTranslation.jumpTo(sequentialTranslation.getTotalDuration().subtract(Duration.millis(1200))); // 1200
+        //sequentialTranslation.jumpTo(sequentialTranslation.getTotalDuration().subtract(Duration.millis(1200))); // 1200
+
+        if (skippibleAnimation()) {
+            sequentialTranslation.jumpTo(sequentialTranslation.getTotalDuration().subtract(Duration.millis(1200))); // 1200
+        }
     }
 
     public double generateRandomNumber () {

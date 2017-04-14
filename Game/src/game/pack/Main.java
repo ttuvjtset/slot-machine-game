@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -12,6 +13,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        Font.loadFont(Main.class.getResource("lcddot.ttf").toExternalForm(), 10);
+
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("GameUI.fxml"));
         primaryStage.setTitle("Slot Machine");

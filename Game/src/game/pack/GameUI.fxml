@@ -25,7 +25,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane id="AnchorPane" prefHeight="960.0" prefWidth="1200.0" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="960.0" prefWidth="1200.0" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="501.0" layoutX="55.0" layoutY="217.0" stroke="BLACK" strokeType="INSIDE" width="1084.0" />
             <ImageView fx:id="imageView9" fitHeight="256.0" fitWidth="256.0" layoutX="849.0" pickOnBounds="true" preserveRatio="true" />
@@ -72,12 +72,12 @@
                </graphic></Button>
             <Label fx:id="highScoreLabel" layoutX="390.0" layoutY="872.0" text="dd" textFill="WHITE" />
             <Button fx:id="goToMenuBtn" layoutX="14.0" layoutY="906.0" mnemonicParsing="false" onAction="#goToMenu" styleClass="buttonExit" text="Go to Menu" textFill="WHITE" />
-            <Label fx:id="outputLabelTextPreloaded" layoutX="76.0" layoutY="79.0" text="Three Similar Fruits!!!" textFill="#efef5a">
+            <Label fx:id="outputLabelTextPreloaded" layoutX="76.0" layoutY="79.0" styleClass="fontLCDDot" text="Three Similar Fruits!!!" textFill="#efef5a">
                <font>
                   <Font name="LCDDot Regular" size="39.0" />
                </font>
             </Label>
-            <Label fx:id="outputLabelCoinsPreloaded" alignment="TOP_RIGHT" layoutX="817.0" layoutY="71.0" prefHeight="73.0" prefWidth="289.0" text="0" textFill="#acd65b">
+            <Label fx:id="outputLabelCoinsPreloaded" alignment="TOP_RIGHT" layoutX="817.0" layoutY="71.0" prefHeight="73.0" prefWidth="289.0" styleClass="fontLCDDot" text="0" textFill="#acd65b">
                <font>
                   <Font name="LCDDot Regular" size="60.0" />
                </font>
@@ -99,13 +99,14 @@
                <font>
                   <Font size="20.0" />
                </font></ToggleButton>
-            <Label fx:id="winAmountLabel" alignment="TOP_RIGHT" layoutX="695.0" layoutY="102.0" text="0" textFill="#aad65c">
+            <Label fx:id="winAmountLabel" alignment="TOP_RIGHT" layoutX="730.0" layoutY="71.0" styleClass="fontLCDDot" text="0" textFill="#aad65c">
                <font>
                   <Font name="LCDDot Regular" size="60.0" />
                </font>
             </Label>
             <Label fx:id="highScoreLabel1" layoutX="389.0" layoutY="899.0" text="You can enter your name:" textFill="WHITE" />
             <TextField fx:id="saveNameLabel" layoutX="567.0" layoutY="894.0" />
+            <Button fx:id="tmpBtn" layoutX="44.0" layoutY="782.0" mnemonicParsing="false" onAction="#tmpTestAnim" text="tmp" />
          </children>
       </AnchorPane>
    </children>
