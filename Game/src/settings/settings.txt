@@ -1,1 +1,1 @@
-100;normal
+5;normal

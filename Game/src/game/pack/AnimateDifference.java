@@ -11,11 +11,13 @@ public class AnimateDifference {
     private Label label;
     private SequentialTransition str;
     private String text;
+    private AnchorPane pane;
 
     public AnimateDifference(AnchorPane pane, String text, int x, int y) {
 
         label = new Label();
         label.setVisible(false);
+        this.pane = pane;
         pane.getChildren().add(label);
         this.text = text;
         label.setStyle("-fx-font-family: LCDDot; -fx-font-size: 60; -fx-text-fill: #aad65c;");
@@ -71,24 +73,34 @@ public class AnimateDifference {
             tt2.setCycleCount(1);
             //tt.setAutoReverse(false);
 
+/*            FadeTransition ft3 = new FadeTransition(Duration.millis(300), label);
+            ft3.setFromValue(1.0);
+            ft3.setToValue(0.0);
+
+            ParallelTransition ptr2 = new ParallelTransition();
+            ptr.getChildren().addAll(tt2, ft3);*/
+
             str = new SequentialTransition(ptr, scaleTransition2, pause, tt, tt2);
         }
-
-
-
     }
 
     public void playAnimation() {
         if(!text.equals("")){
             label.setVisible(true);
             str.play();
+            str.setOnFinished(e -> pane.getChildren().remove(label));
         }
-
     }
 
     public void stopAnimation() {
         if (!text.equals("")){
             str.playFrom(Duration.millis(5400));
+            str.setOnFinished(e -> pane.getChildren().remove(label));
         }
+    }
+
+    public void deleteAnimateDifferenceLabel() {
+        label.setVisible(false);
+        pane.getChildren().remove(label);
     }
 }

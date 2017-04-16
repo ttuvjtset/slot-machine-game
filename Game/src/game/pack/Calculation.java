@@ -5,12 +5,18 @@ import java.util.Collections;
 
 
 public class Calculation {
-    public ArrayList<String> sequence;
+    private ArrayList<String> sequence;
 
-    int startAmount;
-    int currentAmount = 0;
-    int playAmount = 1;
-    int winAmount = 0;
+    private int startAmount;
+    private int currentAmount = 0;
+    private int playAmount = 1;
+    private int winAmount = 0;
+
+    public boolean isPlayedOnce() {
+        return playedOnce;
+    }
+
+    private boolean playedOnce = false;
 
     public int getWinAmount() {
         return winAmount;
@@ -50,6 +56,8 @@ public class Calculation {
     }
 
     public String evaluate() {
+        playedOnce = true;
+
         if (currentAmount <= 0) {
             return "Game over!";
         }
