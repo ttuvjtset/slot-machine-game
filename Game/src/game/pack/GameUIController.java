@@ -401,7 +401,7 @@ public class GameUIController implements Initializable {
         if (ad != null) ad.deleteAnimateDifferenceLabel();
 
         //////////////////
-        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground, imageViewBlurredBox, goToMenuBtn, 65, 200,210, 800,600, 0.5);
+        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground, imageViewBlurredBox, goToMenuBtn, 65, 200,210, 800,600, 0.6);
         FadeTransition ft0 = dtb.generateFadeTransition();
         ft0.play();
 

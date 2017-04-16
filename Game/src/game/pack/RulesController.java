@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -21,6 +22,9 @@ public class RulesController  implements Initializable {
 
     @FXML
     private AnchorPane anchorPane;
+
+    @FXML
+    private Rectangle tmpBox;
 
     @FXML
     private Button goToMenuBtn;
@@ -53,6 +57,7 @@ public class RulesController  implements Initializable {
     private Label label7;
 
     public void initialize(URL location, ResourceBundle resources) {
+        tmpBox.setVisible(false);
         label1.setVisible(false);
         label2.setVisible(false);
         label3.setVisible(false);
@@ -62,7 +67,7 @@ public class RulesController  implements Initializable {
         label7.setVisible(false);
         goToMenuBtn.setVisible(false);
 
-        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground, imageViewBlurredBox, null, 0, 200,300, 800,610, 0.73);
+        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground, imageViewBlurredBox, null, 0, 200,300, 800,610, 0.80);
         FadeTransition ft0 = dtb.generateFadeTransition();
         ft0.play();
 

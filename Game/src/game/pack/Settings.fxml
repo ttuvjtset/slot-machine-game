@@ -22,49 +22,51 @@
         <RowConstraints />
     </rowConstraints>
     <children>
-        <AnchorPane prefHeight="960.0" prefWidth="1200.0">
+        <AnchorPane fx:id="anchorPane" prefHeight="960.0" prefWidth="1200.0">
             <children>
             <ImageView fitHeight="960.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../ui_images/background_main.png" />
+                  <Image url="@../../ui_images/background_w_menu.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="470.0" layoutX="221.0" layoutY="328.0" opacity="0.18" stroke="#e5d063" strokeType="INSIDE" strokeWidth="0.0" width="759.0" />
-                <Button fx:id="GoToMenuBtn" layoutX="15.0" layoutY="915.0" mnemonicParsing="false" onAction="#GoToMenu" styleClass="buttonExit" stylesheets="@application.css" text="Back to menu" textFill="WHITE" />
-                <Label layoutX="453.0" layoutY="350.0" text="Settings" textFill="#e7d163">
+            <Rectangle fx:id="tmpBox" arcHeight="5.0" arcWidth="5.0" fill="#bf7979" height="535.0" layoutX="200.0" layoutY="300.0" stroke="#e5d063" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
+            <ImageView fx:id="imageViewDeactivateBackground" fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imageViewBlurredBox" fitHeight="150.0" fitWidth="200.0" layoutX="40.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true" />
+                <Button fx:id="goToMenuBtn" layoutX="421.0" layoutY="749.0" mnemonicParsing="false" onAction="#goToMenu" styleClass="buttonExitBig" stylesheets="@application.css" text="Back to menu" textFill="WHITE" />
+                <Label fx:id="label1" layoutX="506.0" layoutY="331.0" text="Settings">
                <font>
-                  <Font name="System Bold" size="69.0" />
+                  <Font name="System Bold" size="50.0" />
                </font></Label>
-            <TextField fx:id="coinsInput" layoutX="483.0" layoutY="479.0" onKeyReleased="#writeOnKeyReleased" promptText="coins" />
-            <ToggleButton fx:id="normalDifficultyBtn" layoutX="483.0" layoutY="539.0" mnemonicParsing="false" onAction="#normalDifficulty" selected="true" text="Normal">
+            <TextField fx:id="coinsInput" layoutX="473.0" layoutY="440.0" onKeyReleased="#writeOnKeyReleased" prefHeight="44.0" prefWidth="250.0" promptText="coins" stylesheets="@main_menu.css" />
+            <ToggleButton fx:id="normalDifficultyBtn" layoutX="473.0" layoutY="509.0" mnemonicParsing="false" onAction="#normalDifficulty" selected="true" styleClass="buttonToggleSettings" stylesheets="@main_menu.css" text="Normal">
                <toggleGroup>
                   <ToggleGroup fx:id="difficultyBtns" />
                </toggleGroup>
             </ToggleButton>
-            <ToggleButton fx:id="hardDifficultyBtn" layoutX="559.0" layoutY="539.0" mnemonicParsing="false" onAction="#hardDifficulty" selected="true" text="Hard" toggleGroup="$difficultyBtns" />
-            <Label fx:id="statusLabel" layoutX="483.0" layoutY="597.0" text="Label" textFill="WHITE">
+            <ToggleButton fx:id="hardDifficultyBtn" layoutX="574.0" layoutY="509.0" mnemonicParsing="false" onAction="#hardDifficulty" selected="true" styleClass="buttonToggleSettings" stylesheets="@main_menu.css" text="Hard" toggleGroup="$difficultyBtns" />
+            <Label fx:id="statusLabel" layoutX="473.0" layoutY="583.0" text="Label">
                <font>
-                  <Font size="25.0" />
+                  <Font size="22.0" />
                </font></Label>
-            <Button fx:id="resetBtn" layoutX="283.0" layoutY="731.0" mnemonicParsing="false" onAction="#reset" text="Reset to defaults" />
-            <Label layoutX="283.0" layoutY="476.0" text="Coins amount:" textFill="WHITE">
+            <Button fx:id="resetBtn" layoutX="610.0" layoutY="749.0" mnemonicParsing="false" onAction="#reset" styleClass="buttonExitBig" stylesheets="@application.css" text="Reset to defaults" textFill="WHITE" />
+            <Label fx:id="label2" layoutX="273.0" layoutY="446.0" text="Coins amount:">
                <font>
-                  <Font size="25.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="283.0" layoutY="536.0" text="Difficulty:" textFill="WHITE">
+            <Label fx:id="label3" layoutX="273.0" layoutY="515.0" text="Difficulty:">
                <font>
-                  <Font size="25.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="531.0" layoutY="728.0" text="Settings are being saved automatically." textFill="WHITE">
+            <Label fx:id="label5" layoutX="593.0" layoutY="661.0" text="Settings are being saved automatically!">
                <font>
-                  <Font name="System Italic" size="25.0" />
+                  <Font name="System Italic" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="283.0" layoutY="597.0" text="Status:" textFill="WHITE">
+            <Label fx:id="label4" layoutX="273.0" layoutY="583.0" text="Status:">
                <font>
-                  <Font size="25.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
             </children>
