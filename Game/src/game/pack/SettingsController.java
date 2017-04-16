@@ -58,7 +58,7 @@ public class SettingsController implements Initializable {
 
 
     @FXML
-    void GoToMenu(ActionEvent event) throws Exception {
+    public void GoToMenu(ActionEvent event) throws Exception {
         Parent blah = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         Scene scene = new Scene(blah);
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -68,21 +68,21 @@ public class SettingsController implements Initializable {
 
 
     @FXML
-    void hardDifficulty(ActionEvent event) {
+    public void hardDifficulty(ActionEvent event) {
         writeToFile();
     }
 
     @FXML
-    void normalDifficulty(ActionEvent event) {
+    public void normalDifficulty(ActionEvent event) {
         writeToFile();
     }
 
     @FXML
-    void writeOnKeyReleased(KeyEvent event) {
+    public void writeOnKeyReleased(KeyEvent event) {
         writeToFile();
     }
 
-    void writeToFile() {
+    public void writeToFile() {
         try{
             if (hardDifficultyBtn.isSelected() || normalDifficultyBtn.isSelected()) {
                 int coinsEntered = Integer.valueOf(coinsInput.getText());
@@ -118,14 +118,14 @@ public class SettingsController implements Initializable {
     }
 
     @FXML
-    void reset(ActionEvent event) {
+    public void reset(ActionEvent event) {
         lrs.rewriteWithDefaults();
         lrs.checkAndLoadSettings();
         displayData();
         statusLabel.setText("Data restored");
     }
 
-    void displayData(){
+    public void displayData(){
         this.coinsRead = lrs.getCoinsRead();
         this.difficultyRead = lrs.getDifficultyRead();
         coinsInput.setText(String.valueOf(this.coinsRead));

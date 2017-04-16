@@ -8,20 +8,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.effect.BoxBlur;
-import javafx.scene.effect.ColorAdjust;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -402,102 +396,13 @@ public class GameUIController implements Initializable {
 
     @FXML
     void cashoutAndSave(ActionEvent event) {
-        //outputLabelTextStatic.setText("To start press Start New Game");
-
-//        highScoreLabel.setVisible(true);
-//
-//
-//        String highscoreSaveProcessAnwser = highScore.save(calculation.getCurrentAmount());
-//        highScoreLabel.setText(highscoreSaveProcessAnwser);
-//        if (!highscoreSaveProcessAnwser.contains("Not greater than previously achieved ")) {
-//            highScoreLabel1.setVisible(true);
-//            saveNameLabel.setVisible(true);
-//
-//            outputLabelCoinsStatic.setText("");
-//            //resetGameBtn.setVisible(true);
-//            resetGameBtn.setDisable(false);
-//            generateBtn.setVisible(false);
-//            checkoutBtn.setDisable(true);
-//            //checkoutBtn.setVisible(false);
-//            gameOver = true;
-//        } else {
-//
-//            // + button
-//        }
-        //highScoreLabel.setText("High score:" + highScore.getHighScore());
 
         goToMenuBtn.setVisible(false);
         if (ad != null) ad.deleteAnimateDifferenceLabel();
-        Image frozenImage = anchorPane.snapshot(new SnapshotParameters(), null);
 
-        /// mask background with inactive screenshot
-//        if (!calculation.isPlayedOnce()) {
-//            System.out.println("we are here");
-//            imageViewDeactivateBackground.setLayoutX(0);
-//            imageViewDeactivateBackground.setLayoutY(-90);
-//            imageViewDeactivateBackground.setFitHeight(1200);
-//            imageViewDeactivateBackground.setFitWidth(1200);
-//            imageViewDeactivateBackground.setPreserveRatio(true);
-//            Rectangle rectangleWithoutBackHomeBtn = new Rectangle(0, 90, 1200, 960);
-//            imageViewDeactivateBackground.setClip(rectangleWithoutBackHomeBtn);
-//            goToMenuBtn.setTranslateX(500);
-//            goToMenuBtn.setTranslateY(-210);
-//            goToMenuBtn.setStyle("-fx-font-size: 20pt;");
-//            imageViewDeactivateBackground.setImage(frozenImage);
-//        } else {
-
-        imageViewDeactivateBackground.setLayoutX(0);
-        imageViewDeactivateBackground.setLayoutY(65);
-        imageViewDeactivateBackground.setFitHeight(1200);
-        imageViewDeactivateBackground.setFitWidth(1200);
-        imageViewDeactivateBackground.setPreserveRatio(true);
-        Rectangle rectangleWithoutBackHomeBtn = new Rectangle(0, 0, 1200, 960);
-        imageViewDeactivateBackground.setClip(rectangleWithoutBackHomeBtn);
-        goToMenuBtn.setTranslateX(500);
-        goToMenuBtn.setTranslateY(-140); // 65
-        goToMenuBtn.setStyle("-fx-font-size: 20pt;");
-        imageViewDeactivateBackground.setImage(frozenImage);
-//        }
-
-
-/*        if (!calculation.isPlayedOnce()) {
-
-            Rectangle clipShape = new Rectangle(200, 300, 800, 600);
-            clipShape.setArcHeight(50); // rounded edges
-            clipShape.setArcWidth(50); // rounded edges
-            imageViewBlurredBox.setLayoutX(0);
-            imageViewBlurredBox.setLayoutY(-90);
-            imageViewBlurredBox.setFitHeight(1200);
-            imageViewBlurredBox.setFitWidth(1200);
-            imageViewBlurredBox.setPreserveRatio(true);
-            imageViewBlurredBox.setClip(clipShape);
-            imageViewBlurredBox.setImage(frozenImage);
-
-        } else {*/
-        Rectangle clipShape = new Rectangle(200, 210, 800, 600);
-        clipShape.setArcHeight(50); // rounded edges
-        clipShape.setArcWidth(50); // rounded edges
-        imageViewBlurredBox.setLayoutX(0);
-        imageViewBlurredBox.setLayoutY(65);
-        imageViewBlurredBox.setFitHeight(1200);
-        imageViewBlurredBox.setFitWidth(1200);
-        imageViewBlurredBox.setPreserveRatio(true);
-        imageViewBlurredBox.setClip(clipShape);
-        imageViewBlurredBox.setImage(frozenImage);
-
-/*        }*/
-
-
-        BoxBlur bb = new BoxBlur(70, 70, 3);
-        ColorAdjust ca = new ColorAdjust(0, 0.03, 0.50, 0.05);
-        bb.setInput(ca);
-        imageViewBlurredBox.setEffect(bb);
-
-
-        FadeTransition ft0 = new FadeTransition(Duration.millis(400), imageViewBlurredBox);
-        ft0.setFromValue(0.0);
-        ft0.setToValue(1.0);
-
+        //////////////////
+        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground, imageViewBlurredBox, goToMenuBtn, 65, 200,210, 800,600, 0.5);
+        FadeTransition ft0 = dtb.generateFadeTransition();
         ft0.play();
 
         ft0.setOnFinished(e -> {
@@ -507,15 +412,12 @@ public class GameUIController implements Initializable {
             int wonAmount = Integer.valueOf(calculation.getCurrentAmount()) - coinsRead;
             System.out.println("Started: " + coinsRead + " Checking out: " + calculation.getCurrentAmount() + " Won: " + wonAmount);
 
-
-
-            //double scoreCalculated = 0.0;
             String wonOrLostText = "";
             int scoreCalculatedInt = -1;
             if (wonAmount > 0) {
-                float wonAmaountFloat = (float) wonAmount;
+                float wonAmountFloat = (float) wonAmount;
                 float coinsReadFloat = (float) coinsRead;
-                float scoreCalculated = (wonAmaountFloat / coinsReadFloat) * 100;
+                float scoreCalculated = (wonAmountFloat / coinsReadFloat) * 100;
                 scoreCalculatedInt = (int) scoreCalculated;
                 System.out.println(wonAmount + " / " + coinsRead + " = " + scoreCalculatedInt);
                 wonOrLostText = "You won " + wonAmount + " coins! \nYour score is " + scoreCalculatedInt + ".";
@@ -524,33 +426,15 @@ public class GameUIController implements Initializable {
             } else if (wonAmount == 0) {
                 wonOrLostText = "You did not lose or win anything!";
             }
+
             highScoreDetailsLabel.setText("You've started with " + coinsRead + " coins.\nNow checking out with " + calculation.getCurrentAmount() + " coins.\n\n" + wonOrLostText);
             highScoreDetailsLabel.setVisible(true);
 
-            if(scoreCalculatedInt > 0){
+            if (scoreCalculatedInt > 0) {
                 highScoreLabel.setVisible(true);
-                String highscoreSaveProcessAnwser = highScore.save(String.valueOf(scoreCalculatedInt));
-                //String highscoreSaveProcessAnwser = highScore.save(calculation.getCurrentAmount());
-                highScoreLabel.setText(highscoreSaveProcessAnwser);
-//                if (!highscoreSaveProcessAnwser.contains("Not greater than previously achieved ")) {
-//                    highScoreLabel1.setVisible(true);
-//                    saveNameLabel.setVisible(true);
-//
-//                    outputLabelCoinsStatic.setText("");
-//                    //resetGameBtn.setVisible(true);
-//                    resetGameBtn.setDisable(false);
-//                    generateBtn.setVisible(false);
-//                    checkoutBtn.setDisable(true);
-//                    //checkoutBtn.setVisible(false);
-//                    gameOver = true;
-//                } else {
-//
-//                    // + button
-//                }
+                String highScoreSaveProcessAnswer = highScore.save(String.valueOf(scoreCalculatedInt));
+                highScoreLabel.setText(highScoreSaveProcessAnswer);
             }
-
-
-
         });
     }
 
@@ -620,6 +504,4 @@ public class GameUIController implements Initializable {
     void tmpTestAnim(ActionEvent event) {
 
     }
-
-
 }

@@ -215,6 +215,16 @@
 -fx-underline: true;
 }
 
+.buttonExitBig {
+    -fx-background-color: rgba(93,38,120, 100);
+    //-fx-border-color: white;
+    -fx-font-size: 17pt;
+    -fx-background-radius: 5em;
+}
+.buttonExitBig:hover {
+-fx-underline: true;
+}
+
 .fontLCDDot {
     -fx-font-family: "LCDDot";
 }
