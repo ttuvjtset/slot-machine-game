@@ -11,10 +11,11 @@ import static org.testng.AssertJUnit.assertEquals;
 public class LoadRestoreSettingsTest {
     @Test
     public void getDifficultyRead() throws Exception {
-//        "Game/src/score/score.txt";
-//        Game\src\images\Apple.png
-        String settingsFilename = "Game\\src\\game\\test\\test1.txt";
+
+        String settingsFilename = "Game/src/settings/settings.txt";
         LoadRestoreSettings lrs = new LoadRestoreSettings(settingsFilename);
+        lrs.getCoinsRead();
+        lrs.getDifficultyRead();
 
         assertEquals(true, lrs.isDataRestored());
     }
