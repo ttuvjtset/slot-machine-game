@@ -20,67 +20,153 @@ import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable {
 
+    /**
+     * MAGIC NUMBER FOR MASKING.
+     */
+    public static final int TWO_HUNDRED = 200;
+
+    /**
+     * MAGIC NUMBER FOR MASKING.
+     */
+    public static final int THREE_HUNDRED = 300;
+
+    /**
+     * MAGIC NUMBER FOR MASKING.
+     */
+    public static final int EIGHT_HUNDRED = 800;
+
+    /**
+     * MAGIC NUMBER FOR MASKING.
+     */
+    public static final int FIVE_HUNDRED_THERTY_FIVE = 535;
+
+    /**
+     * Anchorpane.
+     */
     @FXML
     private AnchorPane anchorPane;
 
+    /**
+     * Gotomenu button.
+     */
     @FXML
     private Button goToMenuBtn;
 
+    /**
+     * Textinput coinsInput.
+     */
     @FXML
     private TextField coinsInput;
 
+    /**
+     * Toggle normal difficulty button.
+     */
     @FXML
     private ToggleButton normalDifficultyBtn;
 
+    /**
+     * Toggle hard difficulty button.
+     */
     @FXML
     private ToggleButton hardDifficultyBtn;
 
+    /**
+     * Difficulty Buttons.
+     */
     @FXML
     private ToggleGroup difficultyBtns;
 
+    /**
+     * Status label.
+     */
     @FXML
     private Label statusLabel;
 
+    /**
+     * Just text labels.
+     */
     @FXML
     private Label label1;
 
+    /**
+     * Just text labels.
+     */
     @FXML
     private Label label2;
 
+    /**
+     * Just text labels.
+     */
     @FXML
     private Label label3;
 
+    /**
+     * Just text labels.
+     */
     @FXML
     private Label label4;
 
+    /**
+     * Just text labels.
+     */
     @FXML
     private Label label5;
 
+    /**
+     * ImageView DeactivateBackground.
+     */
     @FXML
     private ImageView imageViewDeactivateBackground;
 
+    /**
+     * ImageView BlurredBox.
+     */
     @FXML
     private ImageView imageViewBlurredBox;
 
+    /**
+     * Reset Button.
+     */
     @FXML
     private Button resetBtn;
 
+    /**
+     * Rectangular for testing purposes.
+     */
     @FXML
     private Rectangle tmpBox;
 
-
+    /**
+     * Boolean status for data corruption.
+     */
     private boolean dataCorrupted = false;
 
+    /**
+     * Coins read from the file.
+     */
     private int coinsRead;
 
+    /**
+     * Difficulty read from the file.
+     */
     private String difficultyRead;
 
+    /**
+     * String path.
+     */
     private String settingsFilename = "Game/src/settings/settings.txt";
 
+    /**
+     * LoadRestoreSettings object.
+     */
     private LoadRestoreSettings lrs;
 
-
-
+    /**
+     * Initialize method.
+     *
+     * @param location  location.
+     * @param resources resources.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tmpBox.setVisible(false);
@@ -100,7 +186,7 @@ public class SettingsController implements Initializable {
         displayData();
         if (lrs.isDataRestored()) statusLabel.setText("Setting file corrupted. Settings were restored.");
 
-        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground, imageViewBlurredBox, null, 0, 200,300, 800,535, 0.80);
+        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground, imageViewBlurredBox, null, 0, TWO_HUNDRED, THREE_HUNDRED, EIGHT_HUNDRED, FIVE_HUNDRED_THERTY_FIVE, 0.80);
         FadeTransition ft0 = dtb.generateFadeTransition();
         ft0.play();
 
@@ -120,37 +206,59 @@ public class SettingsController implements Initializable {
 
     }
 
-
+    /**
+     * GoToMenu Button.
+     *
+     * @param event event.
+     * @throws Exception Exception.
+     */
     @FXML
     public void goToMenu(ActionEvent event) throws Exception {
-        Parent blah = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-        Scene scene = new Scene(blah);
+        Parent parent = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        Scene scene = new Scene(parent);
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage.setScene(scene);
         appStage.show();
     }
 
-
+    /**
+     * Pressed hard difficulty button.
+     *
+     * @param event button pressed.
+     */
     @FXML
     public void hardDifficulty(ActionEvent event) {
         writeToFile();
     }
 
+    /**
+     * Pressed normal difficulty button.
+     *
+     * @param event button pressed.
+     */
     @FXML
     public void normalDifficulty(ActionEvent event) {
         writeToFile();
     }
 
+    /**
+     * Write on key - autosave.
+     *
+     * @param event event.
+     */
     @FXML
     public void writeOnKeyReleased(KeyEvent event) {
         writeToFile();
     }
 
+    /**
+     * Write to file.
+     */
     public void writeToFile() {
-        try{
+        try {
             if (hardDifficultyBtn.isSelected() || normalDifficultyBtn.isSelected()) {
                 int coinsEntered = Integer.valueOf(coinsInput.getText());
-                if (coinsEntered > 0 && coinsEntered <= 100){
+                if (coinsEntered > 0 && coinsEntered <= 100) {
                     System.out.println("Digit!");
 
                     FileWrite fw = new FileWrite(settingsFilename);
@@ -181,6 +289,11 @@ public class SettingsController implements Initializable {
         }
     }
 
+    /**
+     * Restore data.
+     *
+     * @param event event.
+     */
     @FXML
     public void reset(ActionEvent event) {
         lrs.rewriteWithDefaults();
@@ -189,7 +302,10 @@ public class SettingsController implements Initializable {
         statusLabel.setText("Data restored");
     }
 
-    public void displayData(){
+    /**
+     * Display data.
+     */
+    public void displayData() {
         this.coinsRead = lrs.getCoinsRead();
         this.difficultyRead = lrs.getDifficultyRead();
         coinsInput.setText(String.valueOf(this.coinsRead));
@@ -206,6 +322,4 @@ public class SettingsController implements Initializable {
         }
 
     }
-
-
 }

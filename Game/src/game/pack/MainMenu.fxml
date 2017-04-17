@@ -9,47 +9,65 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" prefHeight="960.0" prefWidth="1200.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.pack.MainMenuController">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
-   <children>
-      <AnchorPane maxHeight="960.0" maxWidth="1200.0" minHeight="960.0" minWidth="1200.0" prefHeight="960.0" prefWidth="1200.0">
-         <children>
-            <ImageView fitHeight="960.0" fitWidth="1200.0" layoutX="-0.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <image>
-                  <Image url="@../../ui_images/background_main.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="NewGameBtn" layoutX="470.0" layoutY="349.0" mnemonicParsing="false" onAction="#GoToNewGame" prefHeight="65.0" prefWidth="275.0" styleClass="buttonMainMenu" text="New Game">
-               <stylesheets>
-                  <URL value="@application.css" />
-                  <URL value="@main_menu.css" />
-               </stylesheets></Button>
-            <Button fx:id="HighestScoreBtn" layoutX="470.0" layoutY="429.0" mnemonicParsing="false" onAction="#GoToHighestScore" prefHeight="65.0" prefWidth="275.0" styleClass="buttonMainMenu" text="Highest Score">
-               <stylesheets>
-                  <URL value="@application.css" />
-                  <URL value="@main_menu.css" />
-               </stylesheets></Button>
-            <Button fx:id="RulesBtn" layoutX="470.0" layoutY="509.0" mnemonicParsing="false" onAction="#GoToRules" prefHeight="65.0" prefWidth="275.0" styleClass="buttonMainMenu" text="Rules">
-               <stylesheets>
-                  <URL value="@application.css" />
-                  <URL value="@main_menu.css" />
-               </stylesheets></Button>
-            <Button fx:id="SettingsBtn" layoutX="470.0" layoutY="589.0" mnemonicParsing="false" onAction="#GoToSettings" prefHeight="65.0" prefWidth="275.0" styleClass="buttonMainMenu" text="Settings">
-               <stylesheets>
-                  <URL value="@application.css" />
-                  <URL value="@main_menu.css" />
-               </stylesheets></Button>
-            <Button fx:id="ExitBtn" layoutX="470.0" layoutY="669.0" mnemonicParsing="false" onAction="#Exit" prefHeight="65.0" prefWidth="275.0" styleClass="buttonMainMenu" text="Exit">
-               <stylesheets>
-                  <URL value="@application.css" />
-                  <URL value="@main_menu.css" />
-               </stylesheets></Button>
-         </children>
-      </AnchorPane>
-   </children>
+<GridPane alignment="center" hgap="10" prefHeight="960.0" prefWidth="1200.0" vgap="10"
+          xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="game.pack.MainMenuController">
+    <columnConstraints>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+    </rowConstraints>
+    <children>
+        <AnchorPane maxHeight="960.0" maxWidth="1200.0" minHeight="960.0" minWidth="1200.0" prefHeight="960.0"
+                    prefWidth="1200.0">
+            <children>
+                <ImageView fitHeight="960.0" fitWidth="1200.0" layoutX="-0.0" pickOnBounds="true" preserveRatio="true"
+                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                           AnchorPane.topAnchor="0.0">
+                    <image>
+                        <Image url="@../../ui_images/background_main.png"/>
+                    </image>
+                </ImageView>
+                <Button fx:id="NewGameBtn" layoutX="470.0" layoutY="349.0" mnemonicParsing="false"
+                        onAction="#GoToNewGame" prefHeight="65.0" prefWidth="275.0" styleClass="buttonMainMenu"
+                        text="New Game">
+                    <stylesheets>
+                        <URL value="@application.css"/>
+                        <URL value="@main_menu.css"/>
+                    </stylesheets>
+                </Button>
+                <Button fx:id="HighestScoreBtn" layoutX="470.0" layoutY="429.0" mnemonicParsing="false"
+                        onAction="#GoToHighestScore" prefHeight="65.0" prefWidth="275.0" styleClass="buttonMainMenu"
+                        text="Highest Score">
+                    <stylesheets>
+                        <URL value="@application.css"/>
+                        <URL value="@main_menu.css"/>
+                    </stylesheets>
+                </Button>
+                <Button fx:id="RulesBtn" layoutX="470.0" layoutY="509.0" mnemonicParsing="false" onAction="#GoToRules"
+                        prefHeight="65.0" prefWidth="275.0" styleClass="buttonMainMenu" text="Rules">
+                    <stylesheets>
+                        <URL value="@application.css"/>
+                        <URL value="@main_menu.css"/>
+                    </stylesheets>
+                </Button>
+                <Button fx:id="SettingsBtn" layoutX="470.0" layoutY="589.0" mnemonicParsing="false"
+                        onAction="#GoToSettings" prefHeight="65.0" prefWidth="275.0" styleClass="buttonMainMenu"
+                        text="Settings">
+                    <stylesheets>
+                        <URL value="@application.css"/>
+                        <URL value="@main_menu.css"/>
+                    </stylesheets>
+                </Button>
+                <Button fx:id="ExitBtn" layoutX="470.0" layoutY="669.0" mnemonicParsing="false" onAction="#Exit"
+                        prefHeight="65.0" prefWidth="275.0" styleClass="buttonMainMenu" text="Exit">
+                    <stylesheets>
+                        <URL value="@application.css"/>
+                        <URL value="@main_menu.css"/>
+                    </stylesheets>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
 </GridPane>

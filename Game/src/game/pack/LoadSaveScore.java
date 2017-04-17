@@ -1,18 +1,45 @@
 package game.pack;
 
 /**
- * Created by root on 13.04.2017.
+ * Load and Save Score Class.
  */
 public class LoadSaveScore {
-    public String filename;
+    /**
+     * Filename.
+     */
+    private String filename;
 
-    public boolean dataRestored = false;
+    /**
+     * Boolean status for data restore.
+     */
+    private boolean dataRestored = false;
 
-    public boolean dataCorrupted = false;
+    /**
+     * Boolean status for data corruption.
+     */
+    private boolean dataCorrupted = false;
 
-    int scoreRead;
+    /**
+     * Score read.
+     */
+    private int scoreRead;
 
 
+    /**
+     * Constructor.
+     *
+     * @param filename filename.
+     */
+    public LoadSaveScore(String filename) {
+        this.filename = filename;
+    }
+
+
+    /**
+     * Check if data was restored.
+     *
+     * @return boolean.
+     */
     public boolean isDataRestored() {
         if (dataRestored) {
             dataRestored = false;
@@ -21,10 +48,11 @@ public class LoadSaveScore {
             return false;
         }
     }
-    public LoadSaveScore(String filename) {
-        this.filename = filename;
-    }
 
+
+    /**
+     * Check and load settings.
+     */
     public void checkAndLoadSettings() {
         readScoreFile();
 
@@ -36,6 +64,9 @@ public class LoadSaveScore {
         }
     }
 
+    /**
+     * Read the score file.
+     */
     public void readScoreFile() {
         FileRead fr = new FileRead(filename);
         String line = fr.readData();
@@ -43,12 +74,21 @@ public class LoadSaveScore {
         fr.close();
     }
 
+    /**
+     * Rewrite file with default settings.
+     */
     public void rewriteWithDefaults() {
         FileWrite fw = new FileWrite(filename);
         fw.writeData("0");
         fw.close();
     }
 
+    /**
+     * Data verification.
+     *
+     * @param line sting text.
+     * @return return true if integer.
+     */
     public boolean dataVerification(String line) {
         try {
             scoreRead = Integer.valueOf(line);
@@ -62,10 +102,20 @@ public class LoadSaveScore {
         return false;
     }
 
+    /**
+     * Get score read.
+     *
+     * @return ScoreRead.
+     */
     public int getScoreRead() {
         return scoreRead;
     }
 
+    /**
+     * Save the score.
+     *
+     * @param score score.
+     */
     public void saveScore(int score) {
         FileWrite fw = new FileWrite(filename);
         fw.writeData(String.valueOf(score));

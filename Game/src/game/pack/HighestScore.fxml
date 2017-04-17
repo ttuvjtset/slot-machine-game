@@ -11,49 +11,58 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.pack.HighestScoreController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.111"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.pack.HighestScoreController">
     <columnConstraints>
-        <ColumnConstraints />
+        <ColumnConstraints/>
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints />
+        <RowConstraints/>
     </rowConstraints>
     <children>
         <AnchorPane fx:id="anchorPane" prefHeight="850.0" prefWidth="1200.0">
             <children>
-            <ImageView fitHeight="960.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../ui_images/background_w_menu.png" />
-               </image>
-            </ImageView>
-            <Rectangle fx:id="tmpBox" arcHeight="5.0" arcWidth="5.0" fill="#c94141" height="427.0" layoutX="221.0" layoutY="300.0" stroke="#e5d063" strokeType="INSIDE" strokeWidth="0.0" width="759.0" />
-            <ImageView fx:id="imageViewDeactivateBackground" fitHeight="150.0" fitWidth="200.0" layoutX="29.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="imageViewBlurredBox" fitHeight="150.0" fitWidth="200.0" layoutX="39.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true" />
-                <Button fx:id="goToMenuBtn" layoutX="407.0" layoutY="628.0" mnemonicParsing="false" onAction="#goToMenu" styleClass="buttonExitBig" stylesheets="@application.css" text="Back to menu" textFill="WHITE" />
-            <Label fx:id="scoreLabel" layoutX="476.0" layoutY="451.0" prefHeight="41.0" prefWidth="100.0" text="25">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font></Label>
-            <Button fx:id="resetBtn" layoutX="596.0" layoutY="628.0" mnemonicParsing="false" onAction="#reset" styleClass="buttonExitBig" stylesheets="@application.css" text="Reset Highscore" textFill="WHITE" />
-            <Label fx:id="status" layoutX="353.0" layoutY="519.0" text="Label">
-               <font>
-                  <Font size="22.0" />
-               </font></Label>
-            <Label fx:id="label1" layoutX="440.0" layoutY="331.0" text="Highest score">
-               <font>
-                  <Font name="System Bold" size="50.0" />
-               </font>
-            </Label>
-            <Label fx:id="label2" layoutX="263.0" layoutY="455.0" text="The highest score is:">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="label3" layoutX="263.0" layoutY="519.0" text="Status:">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
+                <ImageView fitHeight="960.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../ui_images/background_w_menu.png"/>
+                    </image>
+                </ImageView>
+                <Rectangle fx:id="tmpBox" arcHeight="5.0" arcWidth="5.0" fill="#c94141" height="427.0" layoutX="221.0"
+                           layoutY="300.0" stroke="#e5d063" strokeType="INSIDE" strokeWidth="0.0" width="759.0"/>
+                <ImageView fx:id="imageViewDeactivateBackground" fitHeight="150.0" fitWidth="200.0" layoutX="29.0"
+                           layoutY="37.0" pickOnBounds="true" preserveRatio="true"/>
+                <ImageView fx:id="imageViewBlurredBox" fitHeight="150.0" fitWidth="200.0" layoutX="39.0" layoutY="293.0"
+                           pickOnBounds="true" preserveRatio="true"/>
+                <Button fx:id="goToMenuBtn" layoutX="407.0" layoutY="628.0" mnemonicParsing="false" onAction="#goToMenu"
+                        styleClass="buttonExitBig" stylesheets="@application.css" text="Back to menu" textFill="WHITE"/>
+                <Label fx:id="scoreLabel" layoutX="476.0" layoutY="451.0" prefHeight="41.0" prefWidth="100.0" text="25">
+                    <font>
+                        <Font name="System Bold" size="25.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="resetBtn" layoutX="596.0" layoutY="628.0" mnemonicParsing="false" onAction="#reset"
+                        styleClass="buttonExitBig" stylesheets="@application.css" text="Reset Highscore"
+                        textFill="WHITE"/>
+                <Label fx:id="status" layoutX="353.0" layoutY="519.0" text="Label">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="label1" layoutX="440.0" layoutY="331.0" text="Highest score">
+                    <font>
+                        <Font name="System Bold" size="50.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="label2" layoutX="263.0" layoutY="455.0" text="The highest score is:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="label3" layoutX="263.0" layoutY="519.0" text="Status:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
             </children>
         </AnchorPane>
     </children>

@@ -5,11 +5,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 
-
+/**
+ * Writing to the file with Bufferedwriter.
+ */
 public class FileWrite {
-
+    /**
+     * BufferedWriter.
+     */
     private BufferedWriter out;
 
+    /**
+     * Constructor for initialisation.
+     *
+     * @param filename filename.
+     */
     public FileWrite(String filename) {
         try {
             out = new BufferedWriter(new FileWriter(filename));
@@ -21,6 +30,11 @@ public class FileWrite {
         }
     }
 
+    /**
+     * Writing data to the file.
+     *
+     * @param data data string.
+     */
     public void writeData(String data) {
         try {
             out.write(data);
@@ -30,6 +44,9 @@ public class FileWrite {
         }
     }
 
+    /**
+     * Close FileWriter.
+     */
     public void close() {
         try {
             out.close();

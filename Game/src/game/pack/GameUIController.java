@@ -26,160 +26,397 @@ import java.util.concurrent.TimeUnit;
 
 public class GameUIController implements Initializable {
 
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int THREE_SET_AMOUNT = 3;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int HUNDRED_TO_GET_DIFFERENCE_PERCENTAGE = 100;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int LAYOUT_Y_SIXTY_FIVE = 65;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int WINDOW_X_TWO_HUNDRED = 200;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int WINDOW_Y_TWO_TEN = 210;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int WINDOW_W_EIGHT_HUNDRED = 800;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int WINDOW_H_SIX_HUNDRED = 600;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int PLAY_AMOUNT_CALCULATION_THREE = 3;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int PERIOD_FIFTY = 50;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int THREE = 3;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int X_SIX_EIGHTY = 680;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int Y_SEVENTY_ONE = 71;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int CENTRAL_Y_POSITION_THREE_FOUR_FIVE = 345;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int TOP_Y_POSITION_MINUS_TEN = -10;
+
+    /**
+     * MASKED MAGIC NUMBER.
+     */
+    public static final int BOTTOM_Y_POSITION_SEVEN_TWENTY = 720;
+
+    /**
+     * AnchorPane.
+     */
     @FXML
     private AnchorPane anchorPane;
 
+    /**
+     * Label.
+     */
     @FXML
     private Label outputLabelTextStatic;
 
+    /**
+     * Label.
+     */
     @FXML
     private Label outputLabelCoinsStatic;
 
+    /**
+     * Label.
+     */
     @FXML
     private Label outputLabel3;
 
+    /**
+     * Button.
+     */
     @FXML
     private Button generateBtn;
 
+    /**
+     * ImageView.
+     */
     @FXML
     private ImageView imageView1;
 
+    /**
+     * ImageView.
+     */
     @FXML
     private ImageView image1;
 
+    /**
+     * ImageView.
+     */
     @FXML
     private ImageView image2;
 
+    /**
+     * ImageView.
+     */
     @FXML
     private ImageView image3;
 
+    /**
+     * Button.
+     */
     @FXML
     private Button resetGameBtn;
 
+    /**
+     * GridPane.
+     */
     @FXML
     private GridPane gridPane;
 
+    /**
+     * Button.
+     */
     @FXML
     private Button checkoutBtn;
 
+    /**
+     * Label.
+     */
     @FXML
     private Label highScoreLabel;
 
+    /**
+     * Button.
+     */
     @FXML
     private Button goToMenuBtn;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView2;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView3;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView4;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView5;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView6;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView7;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView8;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView9;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView10;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView11;
 
+    /**
+     * Imageview for reel animation.
+     */
     @FXML
     private ImageView imageView12;
 
+    /**
+     * Output label with preloaded (we know the text before the end of animation) text.
+     */
     @FXML
     private Label outputLabelTextPreloaded;
 
+    /**
+     * Ourput label with preloaded coins number (we know the text before the end of animation) .
+     */
     @FXML
     private Label outputLabelCoinsPreloaded;
 
+    /**
+     * Bet one button object.
+     */
     @FXML
     private ToggleButton playOneBtn;
 
+    /**
+     * Bet three button object.
+     */
     @FXML
     private ToggleButton playThreeBtn;
 
+    /**
+     * Bet all button object.
+     */
     @FXML
     private ToggleButton playAllBtn;
 
+    /**
+     * Stop button.
+     */
     @FXML
     private Button stopBtn;
 
+    /**
+     * Win Amount Label.
+     */
     @FXML
     private Label winAmountLabel;
 
+    /**
+     * High score label.
+     */
     @FXML
     private Label highScoreLabel1;
 
+    /**
+     * Save name label.
+     */
     @FXML
     private TextField saveNameLabel;
 
+    /**
+     * ImageView deactivated background for animation after pressing on checkout button.
+     */
     @FXML
     private ImageView imageViewDeactivateBackground;
 
+    /**
+     * ImageView Blurred box for animation after pressing on checkout button.
+     */
     @FXML
     private ImageView imageViewBlurredBox;
 
+    /**
+     * Label for checkout output.
+     */
     @FXML
     private Label checkoutOutputLabel;
 
+    /**
+     * Label for high score details.
+     */
     @FXML
     private Label highScoreDetailsLabel;
 
+    /**
+     * Button for testing purposes.
+     */
     @FXML
     private Button tmpBtn;
 
 
+    /**
+     * ArrayList catalogue with filepathes to images.
+     */
     ArrayList<String> catalogue;
 
+    /**
+     * Arraylist for normal difficulty.
+     */
     ArrayList<String> catalogueNormal;
 
+    /**
+     * Arraylist for hard difficulty.
+     */
     ArrayList<String> catalogueHard;
 
+    /**
+     * Draw reel object 1.
+     */
     GameDrawReel drawReel1;
 
+    /**
+     * Draw reel object 2.
+     */
     GameDrawReel drawReel2;
 
+    /**
+     * Draw reel object 3.
+     */
     GameDrawReel drawReel3;
 
-
-
+    /**
+     * AnimateDifference for animating winning difference top right corner.
+     */
     private AnimateDifference ad;
 
+    /**
+     * Calculation class object.
+     */
     private Calculation calculation;
 
+    /**
+     * HighScore class object.
+     */
     private HighScore highScore;
 
+    /**
+     * GameOver boolean status to restart.
+     */
     private boolean gameOver = false;
 
-    //private LoadGenerateImages imageLoad;
-
+    /**
+     * Settings filename.
+     */
     private String settingsFilename = "Game/src/settings/settings.txt";
 
+    /**
+     * Score filename.
+     */
     private String scoreFilename = "Game/src/score/score.txt";
 
+    /**
+     * Coins read from the file.
+     */
     private int coinsRead;
 
+    /**
+     * Difficulty read from the file.
+     */
     private String difficultyRead;
 
-
+    /**
+     * Initialize method.
+     * @param location location.
+     * @param resources resources.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -231,9 +468,12 @@ public class GameUIController implements Initializable {
 
         //////////// inactive //////////
 
-        drawReel1 = new GameDrawReel(imageView, imageView2, imageView3, imageView4, 0, 345, -10, 720, catalogue);
-        drawReel2 = new GameDrawReel(imageView5, imageView6, imageView7, imageView8, 0, 345, -10, 720, catalogue);
-        drawReel3 = new GameDrawReel(imageView9, imageView10, imageView11, imageView12, 0, 345, -10, 720, catalogue);
+        drawReel1 = new GameDrawReel(imageView, imageView2, imageView3, imageView4, 0,
+                CENTRAL_Y_POSITION_THREE_FOUR_FIVE, TOP_Y_POSITION_MINUS_TEN, BOTTOM_Y_POSITION_SEVEN_TWENTY, catalogue);
+        drawReel2 = new GameDrawReel(imageView5, imageView6, imageView7, imageView8, 0,
+                CENTRAL_Y_POSITION_THREE_FOUR_FIVE, TOP_Y_POSITION_MINUS_TEN, BOTTOM_Y_POSITION_SEVEN_TWENTY, catalogue);
+        drawReel3 = new GameDrawReel(imageView9, imageView10, imageView11, imageView12, 0,
+                CENTRAL_Y_POSITION_THREE_FOUR_FIVE, TOP_Y_POSITION_MINUS_TEN, BOTTOM_Y_POSITION_SEVEN_TWENTY, catalogue);
         drawReel1.initialize();
         drawReel2.initialize();
         drawReel3.initialize();
@@ -248,10 +488,15 @@ public class GameUIController implements Initializable {
         winAmountLabel.setText("");
     }
 
+    /**
+     * Show reels or play / spin button.
+     * @param event button press.
+     */
     @FXML
     void showReels(ActionEvent event) {
 
-        if (!gameOver && calculation.playPossible() && (playOneBtn.isSelected() || playThreeBtn.isSelected() || playAllBtn.isSelected())) {
+        if (!gameOver && calculation.playPossible()
+                && (playOneBtn.isSelected() || playThreeBtn.isSelected() || playAllBtn.isSelected())) {
 
             if (playAllBtn.isSelected()) calculation.setPlayAmount(Integer.valueOf(calculation.getCurrentAmount()));
 
@@ -271,7 +516,8 @@ public class GameUIController implements Initializable {
             outputLabelTextPreloaded.setVisible(false);
 
             outputLabelCoinsStatic.setVisible(true);
-            outputLabelCoinsStatic.setText(String.valueOf(Integer.valueOf(calculation.getCurrentAmount()) - calculation.getPlayAmount()));
+            outputLabelCoinsStatic.setText(String.valueOf(Integer.valueOf(calculation.getCurrentAmount())
+                    - calculation.getPlayAmount()));
             outputLabelCoinsPreloaded.setVisible(false);
 
             drawReel1.generateAndPlay();
@@ -289,10 +535,12 @@ public class GameUIController implements Initializable {
             //image2.setImage(new Image(new File(path2).toURI().toString()));
             //image3.setImage(new Image(new File(path3).toURI().toString()));
             //
-            //calculation.parse(drawReel1.getRandomlyGeneratedImageFilename(), drawReel2.getRandomlyGeneratedImageFilename(), drawReel3.getRandomlyGeneratedImageFilename());
+            //calculation.parse(drawReel1.getRandomlyGeneratedImageFilename(),
+            // drawReel2.getRandomlyGeneratedImageFilename(), drawReel3.getRandomlyGeneratedImageFilename());
             //String result = calculation.evaluate();
 
-            calculation.parse(drawReel1.getRandomlyGeneratedImageFilename(), drawReel2.getRandomlyGeneratedImageFilename(), drawReel3.getRandomlyGeneratedImageFilename());
+            calculation.parse(drawReel1.getRandomlyGeneratedImageFilename(),
+                    drawReel2.getRandomlyGeneratedImageFilename(), drawReel3.getRandomlyGeneratedImageFilename());
             String result = calculation.evaluate();
 
             outputLabelTextPreloaded.setText(result);
@@ -300,11 +548,12 @@ public class GameUIController implements Initializable {
 
             if (calculation.getWinAmount() > 0) {
                 //winAmountLabel.setText("+" + String.valueOf(calculation.getWinAmount()));
-                ad = new AnimateDifference(anchorPane, "+" + String.valueOf(calculation.getWinAmount()), 680, 71);
+                ad = new AnimateDifference(anchorPane, "+" + String.valueOf(calculation.getWinAmount()),
+                        X_SIX_EIGHTY, Y_SEVENTY_ONE);
 
             } else {
                 //winAmountLabel.setText("");
-                ad = new AnimateDifference(anchorPane, "", 680, 71);
+                ad = new AnimateDifference(anchorPane, "", X_SIX_EIGHTY, Y_SEVENTY_ONE);
             }
 
             //////// temp ///////////
@@ -318,7 +567,8 @@ public class GameUIController implements Initializable {
                 @Override
                 public void run() {
 
-                    if (drawReel1.isAnimationFinished() && drawReel2.isAnimationFinished() && drawReel3.isAnimationFinished()) {
+                    if (drawReel1.isAnimationFinished() && drawReel2.isAnimationFinished()
+                            && drawReel3.isAnimationFinished()) {
                         outputLabelTextStatic.setVisible(false);
                         outputLabelCoinsStatic.setVisible(false);
                         outputLabelTextPreloaded.setVisible(true);
@@ -327,7 +577,7 @@ public class GameUIController implements Initializable {
                         resetGameBtn.setDisable(false);
                         ad.playAnimation();
 
-                        if (Integer.valueOf(calculation.getCurrentAmount()) < 3) {
+                        if (Integer.valueOf(calculation.getCurrentAmount()) < THREE) {
                             playThreeBtn.setDisable(true);
                             playOneBtn.setSelected(true);
                             calculation.setPlayAmount(1);
@@ -354,34 +604,51 @@ public class GameUIController implements Initializable {
                         ses.shutdown();
                     }
                 }
-            }, 0, 50, TimeUnit.MILLISECONDS);
+            }, 0, PERIOD_FIFTY, TimeUnit.MILLISECONDS);
         }
     }
 
-
+    /**
+     * Button bet one.
+     * @param event button press.
+     */
     @FXML
     void PlayOne(ActionEvent event) {
         calculation.setPlayAmount(1);
     }
 
+    /**
+     * Button play three.
+     * @param event button press.
+     */
     @FXML
     void PlayThree(ActionEvent event) {
-        calculation.setPlayAmount(3);
+        calculation.setPlayAmount(PLAY_AMOUNT_CALCULATION_THREE);
     }
 
+    /**
+     * Button play all.
+     * @param event button press.
+     */
     @FXML
     void playAll(ActionEvent event) {
         calculation.setPlayAmount(Integer.valueOf(calculation.getCurrentAmount()));
     }
 
-
+    /**
+     * Checkout button to view the analysis, if you won, lost, or you play was no win/no lost.
+     * The box is animated.
+     * @param event button press.
+     */
     @FXML
     void checkoutAndSave(ActionEvent event) {
 
         goToMenuBtn.setVisible(false);
         if (ad != null) ad.deleteAnimateDifferenceLabel();
 
-        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground, imageViewBlurredBox, goToMenuBtn, 65, 200, 210, 800, 600, 0.6);
+        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground,
+                imageViewBlurredBox, goToMenuBtn, LAYOUT_Y_SIXTY_FIVE, WINDOW_X_TWO_HUNDRED,
+                WINDOW_Y_TWO_TEN, WINDOW_W_EIGHT_HUNDRED, WINDOW_H_SIX_HUNDRED, 0.6);
         FadeTransition ft0 = dtb.generateFadeTransition();
         ft0.play();
 
@@ -390,14 +657,15 @@ public class GameUIController implements Initializable {
             goToMenuBtn.setVisible(true);
             checkoutOutputLabel.setVisible(true);
             int wonAmount = Integer.valueOf(calculation.getCurrentAmount()) - coinsRead;
-            System.out.println("Started: " + coinsRead + " Checking out: " + calculation.getCurrentAmount() + " Won: " + wonAmount);
+            System.out.println("Started: " + coinsRead + " Checking out: " + calculation.getCurrentAmount()
+                    + " Won: " + wonAmount);
 
             String wonOrLostText = "";
             int scoreCalculatedInt = -1;
             if (wonAmount > 0) {
                 float wonAmountFloat = (float) wonAmount;
                 float coinsReadFloat = (float) coinsRead;
-                float scoreCalculated = (wonAmountFloat / coinsReadFloat) * 100;
+                float scoreCalculated = (wonAmountFloat / coinsReadFloat) * HUNDRED_TO_GET_DIFFERENCE_PERCENTAGE;
                 scoreCalculatedInt = (int) scoreCalculated;
                 System.out.println(wonAmount + " / " + coinsRead + " = " + scoreCalculatedInt);
                 wonOrLostText = "You won " + wonAmount + " coins! \nYour score is " + scoreCalculatedInt + ".";
@@ -407,7 +675,8 @@ public class GameUIController implements Initializable {
                 wonOrLostText = "You did not lose or win anything!";
             }
 
-            highScoreDetailsLabel.setText("You've started with " + coinsRead + " coins.\nNow checking out with " + calculation.getCurrentAmount() + " coins.\n\n" + wonOrLostText);
+            highScoreDetailsLabel.setText("You've started with " + coinsRead + " coins.\nNow checking out with "
+                    + calculation.getCurrentAmount() + " coins.\n\n" + wonOrLostText);
             highScoreDetailsLabel.setVisible(true);
 
             if (scoreCalculatedInt > 0) {
@@ -418,7 +687,10 @@ public class GameUIController implements Initializable {
         });
     }
 
-
+    /**
+     * Reset the game button. Available after the amount of coins is zero.
+     * @param event button press.
+     */
     @FXML
     void resetGame(ActionEvent event) {
         if (ad != null) ad.deleteAnimateDifferenceLabel();
@@ -435,7 +707,7 @@ public class GameUIController implements Initializable {
         playAllBtn.setDisable(false);
 
         if (playThreeBtn.isSelected()) {
-            calculation.setPlayAmount(3);
+            calculation.setPlayAmount(THREE_SET_AMOUNT);
             playThreeBtn.setDisable(false);
         } else {
             playOneBtn.setSelected(true);
@@ -455,9 +727,12 @@ public class GameUIController implements Initializable {
         outputLabelCoinsPreloaded.setVisible(false);
         outputLabelCoinsStatic.setVisible(true);
         outputLabelCoinsStatic.setText(calculation.getCurrentAmount());
-
     }
 
+    /**
+     * Stop button for skipping the animation if the minimum amount is played.
+     * @param event button press.
+     */
     @FXML
     void skipAnimation(ActionEvent event) {
         if (drawReel1.skippibleAnimation() && drawReel2.skippibleAnimation() && drawReel3.skippibleAnimation()) {
@@ -468,16 +743,24 @@ public class GameUIController implements Initializable {
         }
     }
 
-
+    /**
+     * Go to menu button.
+     * @param event button press.
+     * @throws Exception Exception.
+     */
     @FXML
     void goToMenu(ActionEvent event) throws Exception {
-        Parent blah = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-        Scene scene = new Scene(blah);
+        Parent parent = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        Scene scene = new Scene(parent);
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage.setScene(scene);
         appStage.show();
     }
 
+    /**
+     * Button for testing purposes, invisible on the main stage.
+     * @param event button press.
+     */
     @FXML
     void tmpTestAnim(ActionEvent event) {
 
