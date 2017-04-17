@@ -395,13 +395,13 @@ public class GameUIController implements Initializable {
 
 
     @FXML
-    void cashoutAndSave(ActionEvent event) {
+    void checkoutAndSave(ActionEvent event) {
 
         goToMenuBtn.setVisible(false);
         if (ad != null) ad.deleteAnimateDifferenceLabel();
 
         //////////////////
-        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground, imageViewBlurredBox, goToMenuBtn, 65, 200,210, 800,600, 0.6);
+        DrawTransparentBox dtb = new DrawTransparentBox(anchorPane, imageViewDeactivateBackground, imageViewBlurredBox, goToMenuBtn, 65, 200, 210, 800, 600, 0.6);
         FadeTransition ft0 = dtb.generateFadeTransition();
         ft0.play();
 

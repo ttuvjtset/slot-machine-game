@@ -62,7 +62,7 @@
             <ImageView fx:id="image2" fitHeight="256.0" fitWidth="256.0" layoutX="466.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="image3" fitHeight="256.0" fitWidth="256.0" layoutX="844.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="resetGameBtn" layoutX="145.0" layoutY="840.0" mnemonicParsing="false" onAction="#resetGame" prefHeight="60.0" prefWidth="122.0" styleClass="buttonReset" text="RESET" textFill="WHITE" />
-            <Button fx:id="checkoutBtn" layoutX="109.0" layoutY="760.0" mnemonicParsing="false" onAction="#cashoutAndSave" prefHeight="60.0" prefWidth="194.0" styleClass="buttonCashout" text="CASHOUT" textFill="WHITE">
+            <Button fx:id="checkoutBtn" layoutX="109.0" layoutY="760.0" mnemonicParsing="false" onAction="#checkoutAndSave" prefHeight="60.0" prefWidth="194.0" styleClass="buttonCashout" text="CASHOUT" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
