@@ -414,7 +414,8 @@ public class GameUIController implements Initializable {
 
     /**
      * Initialize method.
-     * @param location location.
+     *
+     * @param location  location.
      * @param resources resources.
      */
     @Override
@@ -490,6 +491,7 @@ public class GameUIController implements Initializable {
 
     /**
      * Show reels or play / spin button.
+     *
      * @param event button press.
      */
     @FXML
@@ -610,6 +612,7 @@ public class GameUIController implements Initializable {
 
     /**
      * Button bet one.
+     *
      * @param event button press.
      */
     @FXML
@@ -619,6 +622,7 @@ public class GameUIController implements Initializable {
 
     /**
      * Button play three.
+     *
      * @param event button press.
      */
     @FXML
@@ -628,6 +632,7 @@ public class GameUIController implements Initializable {
 
     /**
      * Button play all.
+     *
      * @param event button press.
      */
     @FXML
@@ -638,6 +643,7 @@ public class GameUIController implements Initializable {
     /**
      * Checkout button to view the analysis, if you won, lost, or you play was no win/no lost.
      * The box is animated.
+     *
      * @param event button press.
      */
     @FXML
@@ -689,6 +695,7 @@ public class GameUIController implements Initializable {
 
     /**
      * Reset the game button. Available after the amount of coins is zero.
+     *
      * @param event button press.
      */
     @FXML
@@ -731,6 +738,7 @@ public class GameUIController implements Initializable {
 
     /**
      * Stop button for skipping the animation if the minimum amount is played.
+     *
      * @param event button press.
      */
     @FXML
@@ -745,6 +753,7 @@ public class GameUIController implements Initializable {
 
     /**
      * Go to menu button.
+     *
      * @param event button press.
      * @throws Exception Exception.
      */
@@ -759,6 +768,7 @@ public class GameUIController implements Initializable {
 
     /**
      * Button for testing purposes, invisible on the main stage.
+     *
      * @param event button press.
      */
     @FXML
