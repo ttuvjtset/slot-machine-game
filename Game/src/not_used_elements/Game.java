@@ -1,4 +1,4 @@
-package game.pack;
+package not_used_elements;
 
 //public class Game {
 //

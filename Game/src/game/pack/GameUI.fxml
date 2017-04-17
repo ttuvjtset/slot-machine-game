@@ -53,7 +53,7 @@
                   <Font name="LCDDot Regular" size="60.0" />
                </font></Label>
             <Label fx:id="outputLabel3" layoutX="707.0" layoutY="431.0" />
-            <Label fx:id="outputLabelTextStatic" layoutX="76.0" layoutY="79.0" text="Three Similar Fruits!!!" textFill="#efef5a">
+            <Label fx:id="outputLabelTextStatic" layoutX="76.0" layoutY="79.0" styleClass="fontLCDDot" stylesheets="@application.css" text="Three Similar Fruits!!!" textFill="#efef5a">
                <font>
                   <Font name="LCDDot Regular" size="39.0" />
                </font></Label>
@@ -75,7 +75,7 @@
                   <Font name="LCDDot Regular" size="39.0" />
                </font>
             </Label>
-            <Label fx:id="outputLabelCoinsPreloaded" alignment="TOP_RIGHT" layoutX="817.0" layoutY="71.0" prefHeight="73.0" prefWidth="289.0" styleClass="fontLCDDot" text="0" textFill="#acd65b">
+            <Label fx:id="outputLabelCoinsPreloaded" alignment="TOP_RIGHT" layoutX="817.0" layoutY="71.0" prefHeight="73.0" prefWidth="289.0" styleClass="fontLCDDot" stylesheets="@application.css" text="0" textFill="#acd65b">
                <font>
                   <Font name="LCDDot Regular" size="60.0" />
                </font>
@@ -97,7 +97,7 @@
                <font>
                   <Font size="20.0" />
                </font></ToggleButton>
-            <Label fx:id="winAmountLabel" alignment="TOP_RIGHT" layoutX="730.0" layoutY="71.0" styleClass="fontLCDDot" text="0" textFill="#aad65c">
+            <Label fx:id="winAmountLabel" alignment="TOP_RIGHT" layoutX="730.0" layoutY="71.0" styleClass="fontLCDDot" stylesheets="@application.css" text="0" textFill="#aad65c">
                <font>
                   <Font name="LCDDot Regular" size="60.0" />
                </font>

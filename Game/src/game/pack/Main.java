@@ -16,12 +16,10 @@ public class Main extends Application {
         Font.loadFont(Main.class.getResource("lcddot.ttf").toExternalForm(), 10);
 
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-        //Parent root = FXMLLoader.load(getClass().getResource("GameUI.fxml"));
         primaryStage.setTitle("Slot Machine");
         primaryStage.setScene(new Scene(root, 1188, 948));
-        primaryStage.getIcons().add(new Image("file:Game/src/ui_images/icon.png"));
+        primaryStage.getIcons().add(new Image("file:Game/src/ui_images/Joker.png"));
         primaryStage.setResizable(false);
-        //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     }
 

@@ -1,27 +1,3 @@
-
-/*#AnchorPane{
-    //-fx-background-image: url("file:Game/src/ui_images/background.png");
-    -fx-background-repeat: stretch;
-    //-fx-effect: dropshadow(three-pass-box, white, 30, 0.5, 0, 0);
-    -fx-background-position: center center;
-}
-
-.button {
-    -fx-background-color: rgba(207, 78, 202, 0);
-    -fx-border-color: black;
-    //-fx-border-radius: 30;
-     -fx-font-size: 15pt;
-}
-
-.button:hover{
-    -fx-background-color: rgba(207, 78, 202, 0.5);
-}
-
-.button:pressed{
-    -fx-background-color: rgba(207, 78, 202, 0.8);
-}*/
-
-
 .buttonPlay {
     -fx-background-color:
         linear-gradient(#f0ff35, #a9ff00),
@@ -30,39 +6,24 @@
     -fx-background-insets: 0, 1;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
     -fx-text-fill: #395306;
-
-
     -fx-background-radius: 5em;
     -fx-min-width: 130px;
     -fx-min-height: 130px;
     -fx-max-width: 130px;
     -fx-max-height: 130px;
-
-    //-fx-background-color: rgba(0, 255, 0, 1.0);
-
-
-    //-fx-padding: 10;
-    //-fx-background-color: firebrick;
-    //-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-    //-fx-text-fill: white;
-    //-fx-border-color: black;
-    //-fx-border-radius: 30;
     -fx-font-size: 20pt;
     -fx-font-weight: bold;
 }
 
 .buttonPlay:hover{
-    //-fx-background-color: rgba(0, 255, 0, 0.9);
     -fx-font-size: 22pt;
 }
 
 .buttonPlay:pressed{
-    //-fx-background-color: rgba(0, 255, 0, 0.6);
     -fx-font-size: 20pt;
 }
 
 .buttonStop {
-
     -fx-background-color:
         linear-gradient(#FFD8D8, #FFB6B6),
         radial-gradient(center 50% -40%, radius 200%, #FFB2B2 45%, #FF7575 50%);
@@ -70,38 +31,24 @@
     -fx-background-insets: 0, 1;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
     -fx-text-fill: #395306;
-
-
     -fx-background-radius: 5em;
     -fx-min-width: 130px;
     -fx-min-height: 130px;
     -fx-max-width: 130px;
     -fx-max-height: 130px;
-
-    //-fx-background-color: rgba(255, 0, 0, 1.0);
-    //-fx-padding: 10;
-    //-fx-background-color: firebrick;
-    //-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-    //-fx-text-fill: white;
-    //-fx-border-color: black;
-    //-fx-border-radius: 30;
     -fx-font-size: 20pt;
     -fx-font-weight: bold;
 }
 
 .buttonStop:hover{
-    //-fx-background-color: rgba(255, 0, 0, 0.9);
     -fx-font-size: 22pt;
 }
 
 .buttonStop:pressed{
-    //-fx-background-color: rgba(255, 0, 0, 0.6);
     -fx-font-size: 20pt;
 }
 
-
 .buttonReset {
-
     -fx-background-color:
         linear-gradient(#ffd6ea, #ffaed6),
         radial-gradient(center 50% -40%, radius 200%, #FFABD4 45%, #FF6AB4 50%);
@@ -109,36 +56,20 @@
     -fx-background-insets: 0, 1;
     -fx-effect: dropshadow( three-pass-box , rgba(256,256,256,0.4) , 5, 0.0 , 0 , 1 );
     -fx-text-fill: #395306;
-
-
     -fx-background-radius: 5em;
-
-
-    //-fx-background-color: rgba(214, 131, 237, 1.0);
-    //-fx-padding: 10;
-    //-fx-background-color: firebrick;
-    //-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-    //-fx-text-fill: white;
-    //-fx-border-color: black;
-    //-fx-border-radius: 30;
     -fx-font-size: 17pt;
     -fx-font-weight: bold;
 }
 
 .buttonReset:hover{
-    //-fx-background-color: rgba(214, 131, 237, 0.9);
-
     -fx-font-size: 19pt;
 }
 
 .buttonReset:pressed{
-    //-fx-background-color: rgba(214, 131, 237, 0.6);
     -fx-font-size: 17pt;
 }
 
 .buttonCashout {
-
-
     -fx-background-color:
         linear-gradient(#FFDFBE, #FFBF7E),
         radial-gradient(center 50% -40%, radius 200%, #FFBC78 45%, #EF8B27 50%);
@@ -147,25 +78,16 @@
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
     -fx-text-fill: #395306;
     -fx-background-radius: 5em;
-
-    //-fx-background-color: rgba(236, 207, 126, 1.0);
-    //-fx-padding: 10;
-    //-fx-background-color: firebrick;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-    //-fx-text-fill: white;
-    //-fx-border-color: black;
-    //-fx-border-radius: 30;
     -fx-font-size: 17pt;
     -fx-font-weight: bold;
 }
 
 .buttonCashout:hover{
-    //-fx-background-color: rgba(236, 207, 126, 0.9);
     -fx-font-size: 19pt;
 }
 
 .buttonCashout:pressed{
-    //-fx-background-color: rgba(236, 207, 126, 0.6);
     -fx-font-size: 17pt;
 }
 
@@ -177,11 +99,8 @@
     -fx-background-insets: 0, 1;
     -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.4) , 10, 0 , 0 , 0 );
     -fx-text-fill: #395306;
-    //-fx-background-radius: 5em;
--fx-font-size: 17pt;
--fx-font-weight: bold;
-
-
+    -fx-font-size: 17pt;
+    -fx-font-weight: bold;
 }
 
 .toggle-button:selected {
@@ -192,40 +111,37 @@
     -fx-background-insets: 0, 1;
     -fx-effect: dropshadow( one-pass-box , rgba(256,256,256,1.0) , 12, 1.0 , 0 , 0 );
     -fx-text-fill: #395306;
-    //-fx-background-radius: 5em;
--fx-font-size: 19pt;
+    -fx-font-size: 19pt;
 }
 
 .buttonBetToggle:hover{
--fx-font-size: 19pt;
+    -fx-font-size: 19pt;
 }
 
 .buttonBetToggle:pressed{
--fx-font-size: 17pt;
+    -fx-font-size: 17pt;
 }
 
 
 .buttonExit {
     -fx-background-color: rgba(93,38,120, 100);
-    //-fx-border-color: white;
     -fx-font-size: 12pt;
     -fx-background-radius: 5em;
 }
+
 .buttonExit:hover {
--fx-underline: true;
+    -fx-underline: true;
 }
 
 .buttonExitBig {
     -fx-background-color: rgba(93,38,120, 100);
-    //-fx-border-color: white;
     -fx-font-size: 15pt;
     -fx-background-radius: 5em;
 }
+
 .buttonExitBig:hover {
--fx-underline: true;
+    -fx-underline: true;
 }
-
-
 
 .fontLCDDot {
     -fx-font-family: "LCDDot";

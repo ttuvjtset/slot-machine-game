@@ -1,4 +1,4 @@
-package game.pack;
+package not_used_elements;
 
 import java.io.File;
 import java.util.ArrayList;
