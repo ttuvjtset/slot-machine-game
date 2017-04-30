@@ -73,7 +73,6 @@ public class Main extends Application {
         File dir6 = new File("Game/src/ui_images");
         dir6.mkdir();
 
-
         copyFile("files/to/copy/Game/src/images/Apple.png", "Game/src/images/Apple.png");
         copyFile("files/to/copy/Game/src/images/Banana.png", "Game/src/images/Banana.png");
         copyFile("files/to/copy/Game/src/images/Cherry.png", "Game/src/images/Cherry.png");
@@ -84,13 +83,17 @@ public class Main extends Application {
         copyFile("files/to/copy/Game/src/images/Melon.png", "Game/src/images/Melon.png");
         copyFile("files/to/copy/Game/src/images/Orange.png", "Game/src/images/Orange.png");
 
-        copyFile("files/to/copy/Game/src/score/score.txt", "Game/src/score/score.txt");
+        File fileScore = new File("Game/src/score/score.txt");
+        if(!fileScore.exists()) {
+            copyFile("files/to/copy/Game/src/score/score.txt", "Game/src/score/score.txt");
+        }
 
-        copyFile("files/to/copy/Game/src/settings/settings.txt", "Game/src/settings/settings.txt");
+        File fileSettings = new File("Game/src/settings/settings.txt");
+        if(!fileSettings.exists()) {
+            copyFile("files/to/copy/Game/src/settings/settings.txt", "Game/src/settings/settings.txt");
+        }
 
         copyFile("files/to/copy/Game/src/ui_images/Joker.png", "Game/src/ui_images/Joker.png");
-
-
     }
 
     public void copyFile(String from, String to){
