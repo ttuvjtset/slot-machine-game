@@ -1,4 +1,4 @@
-ITI0011 GUI - Slot Machine
+Slot Machine Game
 ==========================
 
 Description
